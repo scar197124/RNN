@@ -1,5 +1,60 @@
 [
   {
+    "category": "Breakthroughs",
+    "region": "Global",
+    "headline": "Quantum computing breakthrough slashes error correction needs",
+    "summary": "Researchers unveiled a new algorithm that reduces quantum error-correction overhead by up to 100\u00d7, moving large-scale quantum computers closer to reality.",
+    "why": "Could accelerate solutions for logistics, climate modeling, and medicine.",
+    "source": "LiveScience",
+    "url": "https://www.livescience.com/technology/computing/this-moves-the-timeline-forward-significantly-quantum-computing-breakthrough-could-slash-pesky-errors-by-up-to-100-times",
+    "color": "#AB47BC",
+    "timestamp": "2025-10-19 22:00"
+  },
+  {
+    "category": "Earth",
+    "region": "Norway",
+    "headline": "Scientists turn waste gases into clean fuel using bacteria",
+    "summary": "Engineers at NIBIO used microbes to convert carbon dioxide and hydrogen into methane at over 96% purity, demonstrating a path to sustainable fuel.",
+    "why": "Transforms emissions into a renewable energy source.",
+    "source": "Times of India",
+    "url": "https://timesofindia.indiatimes.com/science/scientists-add-bacteria-to-a-waste-gas-reactor-what-happened-next-is-nearly-impossible/articleshow/124613661.cms",
+    "color": "#66BB6A",
+    "timestamp": "2025-10-19 21:00"
+  },
+  {
+    "category": "Health",
+    "region": "Global",
+    "headline": "New HIV-prevention drug protects with two injections yearly",
+    "summary": "Lenacapavir, now approved, shows near-total protection against HIV in trials, requiring only two shots per year instead of daily pills.",
+    "why": "Simplifies prevention and could drastically reduce new infections worldwide.",
+    "source": "Vox",
+    "url": "https://www.vox.com/future-perfect/464468/lenacapavir-hiv-drug-pepfar-foreign-aid-gilead-drug",
+    "color": "#42A5F5",
+    "timestamp": "2025-10-19 20:00"
+  },
+  {
+    "category": "Breakthroughs",
+    "region": "Global",
+    "headline": "Nobel Prize awarded for molecular tools that fight climate change",
+    "summary": "Scientists won the 2025 Nobel Prize in Chemistry for metal-organic frameworks that capture carbon, harvest water from air, and filter pollutants.",
+    "why": "Provides scalable tools for climate resilience and clean resources.",
+    "source": "The Washington Post",
+    "url": "https://www.washingtonpost.com/science/2025/10/08/nobel-prize-chemistry-2025-metal-organic-frameworks/",
+    "color": "#FF7043",
+    "timestamp": "2025-10-19 19:00"
+  },
+  {
+    "category": "Culture",
+    "region": "Mauritius",
+    "headline": "Scientists take big step toward reviving the extinct dodo bird",
+    "summary": "Colossal Biosciences successfully cultured germ cells needed for dodo revival, marking a leap in de-extinction science and ecosystem repair.",
+    "why": "Offers hope for restoring lost biodiversity and damaged habitats.",
+    "source": "People",
+    "url": "https://people.com/colossal-biosciences-makes-breakthrough-in-dodo-bird-de-extinction-exclusive-11811466",
+    "color": "#29B6F6",
+    "timestamp": "2025-10-19 18:00"
+  },
+  {
     "category": "Kindness",
     "region": "Canada",
     "headline": "Local caf\u00e9 feeds the homeless every Sunday",
