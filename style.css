@@ -22,4 +22,5 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,sans-seri
 .badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 8px;border-radius:8px;color:#1e2025;margin-bottom:6px}
 .timestamp{font-size:12px;color:var(--muted)}
 .archive-link{text-align:center;margin:20px}
+.archive-date{font-size:16px;font-weight:700;color:var(--brand);margin:20px 0 10px}
 .site-footer{padding:20px;border-top:1px solid #1e2228;color:var(--muted);text-align:center}

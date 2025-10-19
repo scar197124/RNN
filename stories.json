@@ -1,0 +1,68 @@
+[
+  {
+    "category": "Kindness",
+    "region": "Canada",
+    "headline": "Local caf\u00e9 feeds the homeless every Sunday",
+    "summary": "A small caf\u00e9 in Toronto offers free meals weekly to those in need.",
+    "why": "It shows community care in action.",
+    "source": "Good News Network",
+    "url": "https://www.goodnewsnetwork.org",
+    "color": "#FFD54F",
+    "timestamp": "2025-10-19 12:00"
+  },
+  {
+    "category": "Earth",
+    "region": "Brazil",
+    "headline": "Amazon reforestation sees record growth",
+    "summary": "Thousands of new trees planted across deforested areas.",
+    "why": "Vital for climate resilience.",
+    "source": "Positive.News",
+    "url": "https://www.positive.news",
+    "color": "#4CAF50",
+    "timestamp": "2025-10-19 11:30"
+  },
+  {
+    "category": "Health",
+    "region": "USA",
+    "headline": "Breakthrough in Alzheimer\u2019s research",
+    "summary": "Scientists discover a treatment that slows memory loss.",
+    "why": "Brings hope to millions.",
+    "source": "Science Daily",
+    "url": "https://www.sciencedaily.com",
+    "color": "#42A5F5",
+    "timestamp": "2025-10-19 11:00"
+  },
+  {
+    "category": "Breakthroughs",
+    "region": "Kenya",
+    "headline": "Solar-powered water pumps change farming communities",
+    "summary": "Villages in Kenya now irrigate fields sustainably using sunlight.",
+    "why": "Empowers small farmers and reduces climate stress.",
+    "source": "BBC Future",
+    "url": "https://www.bbc.com/future",
+    "color": "#AB47BC",
+    "timestamp": "2025-10-19 10:30"
+  },
+  {
+    "category": "Culture",
+    "region": "Japan",
+    "headline": "Ancient art revived by new generation",
+    "summary": "Young artisans bring traditional papermaking into modern design.",
+    "why": "Keeps cultural heritage alive for the future.",
+    "source": "Japan Times",
+    "url": "https://www.japantimes.co.jp",
+    "color": "#EF5350",
+    "timestamp": "2025-10-19 10:00"
+  },
+  {
+    "category": "Round\u2011up",
+    "region": "Global",
+    "headline": "This week\u2019s good news at a glance",
+    "summary": "Highlights: sea turtles rebound, coral nurseries thrive, city bike-sharing breaks records.",
+    "why": "Proof of positive progress across the planet.",
+    "source": "Euronews Green",
+    "url": "https://www.euronews.com/green",
+    "color": "#90A4AE",
+    "timestamp": "2025-10-19 09:30"
+  }
+]
