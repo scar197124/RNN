@@ -1,123 +1,26 @@
 [
-  {
-    "category": "Breakthroughs",
-    "region": "Global",
-    "headline": "Quantum computing breakthrough slashes error correction needs",
-    "summary": "Researchers unveiled a new algorithm that reduces quantum error-correction overhead by up to 100\u00d7, moving large-scale quantum computers closer to reality.",
-    "why": "Could accelerate solutions for logistics, climate modeling, and medicine.",
-    "source": "LiveScience",
-    "url": "https://www.livescience.com/technology/computing/this-moves-the-timeline-forward-significantly-quantum-computing-breakthrough-could-slash-pesky-errors-by-up-to-100-times",
-    "color": "#AB47BC",
-    "timestamp": "2025-10-19 22:00"
-  },
-  {
-    "category": "Earth",
-    "region": "Norway",
-    "headline": "Scientists turn waste gases into clean fuel using bacteria",
-    "summary": "Engineers at NIBIO used microbes to convert carbon dioxide and hydrogen into methane at over 96% purity, demonstrating a path to sustainable fuel.",
-    "why": "Transforms emissions into a renewable energy source.",
-    "source": "Times of India",
-    "url": "https://timesofindia.indiatimes.com/science/scientists-add-bacteria-to-a-waste-gas-reactor-what-happened-next-is-nearly-impossible/articleshow/124613661.cms",
-    "color": "#66BB6A",
-    "timestamp": "2025-10-19 21:00"
-  },
-  {
-    "category": "Health",
-    "region": "Global",
-    "headline": "New HIV-prevention drug protects with two injections yearly",
-    "summary": "Lenacapavir, now approved, shows near-total protection against HIV in trials, requiring only two shots per year instead of daily pills.",
-    "why": "Simplifies prevention and could drastically reduce new infections worldwide.",
-    "source": "Vox",
-    "url": "https://www.vox.com/future-perfect/464468/lenacapavir-hiv-drug-pepfar-foreign-aid-gilead-drug",
-    "color": "#42A5F5",
-    "timestamp": "2025-10-19 20:00"
-  },
-  {
-    "category": "Breakthroughs",
-    "region": "Global",
-    "headline": "Nobel Prize awarded for molecular tools that fight climate change",
-    "summary": "Scientists won the 2025 Nobel Prize in Chemistry for metal-organic frameworks that capture carbon, harvest water from air, and filter pollutants.",
-    "why": "Provides scalable tools for climate resilience and clean resources.",
-    "source": "The Washington Post",
-    "url": "https://www.washingtonpost.com/science/2025/10/08/nobel-prize-chemistry-2025-metal-organic-frameworks/",
-    "color": "#FF7043",
-    "timestamp": "2025-10-19 19:00"
-  },
-  {
-    "category": "Culture",
-    "region": "Mauritius",
-    "headline": "Scientists take big step toward reviving the extinct dodo bird",
-    "summary": "Colossal Biosciences successfully cultured germ cells needed for dodo revival, marking a leap in de-extinction science and ecosystem repair.",
-    "why": "Offers hope for restoring lost biodiversity and damaged habitats.",
-    "source": "People",
-    "url": "https://people.com/colossal-biosciences-makes-breakthrough-in-dodo-bird-de-extinction-exclusive-11811466",
-    "color": "#29B6F6",
-    "timestamp": "2025-10-19 18:00"
-  },
-  {
-    "category": "Kindness",
-    "region": "Canada",
-    "headline": "Local caf\u00e9 feeds the homeless every Sunday",
-    "summary": "A small caf\u00e9 in Toronto offers free meals weekly to those in need.",
-    "why": "It shows community care in action.",
-    "source": "Good News Network",
-    "url": "https://www.goodnewsnetwork.org",
-    "color": "#FFD54F",
-    "timestamp": "2025-10-19 12:00"
-  },
-  {
-    "category": "Earth",
-    "region": "Brazil",
-    "headline": "Amazon reforestation sees record growth",
-    "summary": "Thousands of new trees planted across deforested areas.",
-    "why": "Vital for climate resilience.",
-    "source": "Positive.News",
-    "url": "https://www.positive.news",
-    "color": "#4CAF50",
-    "timestamp": "2025-10-19 11:30"
-  },
-  {
-    "category": "Health",
-    "region": "USA",
-    "headline": "Breakthrough in Alzheimer\u2019s research",
-    "summary": "Scientists discover a treatment that slows memory loss.",
-    "why": "Brings hope to millions.",
-    "source": "Science Daily",
-    "url": "https://www.sciencedaily.com",
-    "color": "#42A5F5",
-    "timestamp": "2025-10-19 11:00"
-  },
-  {
-    "category": "Breakthroughs",
-    "region": "Kenya",
-    "headline": "Solar-powered water pumps change farming communities",
-    "summary": "Villages in Kenya now irrigate fields sustainably using sunlight.",
-    "why": "Empowers small farmers and reduces climate stress.",
-    "source": "BBC Future",
-    "url": "https://www.bbc.com/future",
-    "color": "#AB47BC",
-    "timestamp": "2025-10-19 10:30"
-  },
-  {
-    "category": "Culture",
-    "region": "Japan",
-    "headline": "Ancient art revived by new generation",
-    "summary": "Young artisans bring traditional papermaking into modern design.",
-    "why": "Keeps cultural heritage alive for the future.",
-    "source": "Japan Times",
-    "url": "https://www.japantimes.co.jp",
-    "color": "#EF5350",
-    "timestamp": "2025-10-19 10:00"
-  },
-  {
-    "category": "Round\u2011up",
-    "region": "Global",
-    "headline": "This week\u2019s good news at a glance",
-    "summary": "Highlights: sea turtles rebound, coral nurseries thrive, city bike-sharing breaks records.",
-    "why": "Proof of positive progress across the planet.",
-    "source": "Euronews Green",
-    "url": "https://www.euronews.com/green",
-    "color": "#90A4AE",
-    "timestamp": "2025-10-19 09:30"
-  }
+    {
+        "headline": "Earth Welcomes a Forest Comeback the Size of Two U.S. States",
+        "summary": "A new global study reveals that tree cover worldwide has expanded by around 2.2 million km\u00b2 over the past 35 years \u2014 an area as large as Texas and Alaska combined. This growth comes from large-scale planting projects, natural regrowth on abandoned farmland, and stronger forest protection efforts. The unexpected gain highlights humanity\u2019s power to help nature rebound."
+    },
+    {
+        "headline": "Young Hands Plant the Future in Kenya",
+        "summary": "Schoolchildren across Kenya have planted more than one million trees, part of a campaign to restore forests and fight climate change."
+    },
+    {
+        "headline": "New Hope for Spinal Injury Patients",
+        "summary": "Swiss researchers developed a bio-gel implant that helped paralyzed patients regain some leg movement in early trials \u2014 a breakthrough in regenerative medicine."
+    },
+    {
+        "headline": "Solar Energy Hits New Price Record",
+        "summary": "The International Energy Agency confirmed that solar power is now the most affordable electricity source in history, with costs falling another 15% this year."
+    },
+    {
+        "headline": "Malaria Deaths Drop Sharply",
+        "summary": "Global malaria deaths have fallen by 20% over the past decade, thanks to the rollout of vaccines and mosquito net programs across affected regions."
+    },
+    {
+        "headline": "Golden Lion Tamarins Return to Brazil\u2019s Forests",
+        "summary": "After years of breeding efforts, conservationists have reintroduced the rare golden lion tamarin into protected rainforests in Brazil."
+    }
 ]
