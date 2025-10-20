@@ -1,50 +1,116 @@
 {
     "2025-10-17": [
         {
+            "category": "Kindness",
+            "region": "Kenya",
             "headline": "Young Hands Plant the Future in Kenya",
-            "summary": "Schoolchildren across Kenya have planted more than one million trees, part of a campaign to restore forests and fight climate change."
+            "summary": "Schoolchildren across Kenya planted more than one million trees to restore forests.",
+            "why": "Demonstrates the power of youth in climate action.",
+            "source": "Good News Network",
+            "url": "https://www.goodnewsnetwork.org",
+            "color": "#FFD54F"
         },
         {
+            "category": "Health",
+            "region": "Switzerland",
             "headline": "New Hope for Spinal Injury Patients",
-            "summary": "Swiss researchers developed a bio-gel implant that helped paralyzed patients regain some leg movement in early trials \u2014 a breakthrough in regenerative medicine."
+            "summary": "Swiss researchers tested a bio-gel implant helping paralyzed patients regain movement.",
+            "why": "Brings hope to those living with spinal injuries.",
+            "source": "BBC",
+            "url": "https://www.bbc.com",
+            "color": "#42A5F5"
         },
         {
+            "category": "Breakthroughs",
+            "region": "Global",
             "headline": "Solar Energy Hits New Price Record",
-            "summary": "The International Energy Agency confirmed that solar power is now the most affordable electricity source in history, with costs falling another 15% this year."
+            "summary": "Solar power is now the cheapest electricity source in history, costs fell 15% this year.",
+            "why": "Affordable renewable energy reshapes the global market.",
+            "source": "AP News",
+            "url": "https://apnews.com",
+            "color": "#AB47BC"
         },
         {
+            "category": "Health",
+            "region": "Africa",
             "headline": "Malaria Deaths Drop Sharply",
-            "summary": "Global malaria deaths have fallen by 20% over the past decade, thanks to the rollout of vaccines and mosquito net programs across affected regions."
+            "summary": "Malaria deaths worldwide declined by 20% over the past decade thanks to vaccines and nets.",
+            "why": "Proof that science and public health save lives.",
+            "source": "WHO",
+            "url": "https://www.who.int",
+            "color": "#42A5F5"
         },
         {
+            "category": "Culture",
+            "region": "Brazil",
             "headline": "Golden Lion Tamarins Return to Brazil\u2019s Forests",
-            "summary": "After years of breeding efforts, conservationists have reintroduced the rare golden lion tamarin into protected rainforests in Brazil."
+            "summary": "Conservationists reintroduced the rare golden lion tamarin into protected rainforest.",
+            "why": "Symbol of hope for endangered species recovery.",
+            "source": "Positive.News",
+            "url": "https://www.positive.news",
+            "color": "#EF5350"
         }
     ],
-    "2025-10-18": [
+    "2025-10-20": [
         {
+            "category": "Earth",
+            "region": "Global",
             "headline": "Earth Welcomes a Forest Comeback the Size of Two U.S. States",
-            "summary": "A new global study reveals that tree cover worldwide has expanded by around 2.2 million km\u00b2 over the past 35 years \u2014 an area as large as Texas and Alaska combined. This growth comes from large-scale planting projects, natural regrowth on abandoned farmland, and stronger forest protection efforts. The unexpected gain highlights humanity\u2019s power to help nature rebound."
+            "summary": "Global tree cover expanded by 2.2 million km\u00b2 in 35 years, equal to Texas and Alaska combined.",
+            "why": "Shows how sustained reforestation efforts can reverse climate damage.",
+            "source": "Positive.News",
+            "url": "https://www.positive.news",
+            "color": "#4CAF50"
         },
         {
+            "category": "Kindness",
+            "region": "Kenya",
             "headline": "Young Hands Plant the Future in Kenya",
-            "summary": "Schoolchildren across Kenya have planted more than one million trees, part of a campaign to restore forests and fight climate change."
+            "summary": "Schoolchildren across Kenya planted more than one million trees to restore forests.",
+            "why": "Demonstrates the power of youth in climate action.",
+            "source": "Good News Network",
+            "url": "https://www.goodnewsnetwork.org",
+            "color": "#FFD54F"
         },
         {
+            "category": "Health",
+            "region": "Switzerland",
             "headline": "New Hope for Spinal Injury Patients",
-            "summary": "Swiss researchers developed a bio-gel implant that helped paralyzed patients regain some leg movement in early trials \u2014 a breakthrough in regenerative medicine."
+            "summary": "Swiss researchers tested a bio-gel implant helping paralyzed patients regain movement.",
+            "why": "Brings hope to those living with spinal injuries.",
+            "source": "BBC",
+            "url": "https://www.bbc.com",
+            "color": "#42A5F5"
         },
         {
+            "category": "Breakthroughs",
+            "region": "Global",
             "headline": "Solar Energy Hits New Price Record",
-            "summary": "The International Energy Agency confirmed that solar power is now the most affordable electricity source in history, with costs falling another 15% this year."
+            "summary": "Solar power is now the cheapest electricity source in history, costs fell 15% this year.",
+            "why": "Affordable renewable energy reshapes the global market.",
+            "source": "AP News",
+            "url": "https://apnews.com",
+            "color": "#AB47BC"
         },
         {
+            "category": "Health",
+            "region": "Africa",
             "headline": "Malaria Deaths Drop Sharply",
-            "summary": "Global malaria deaths have fallen by 20% over the past decade, thanks to the rollout of vaccines and mosquito net programs across affected regions."
+            "summary": "Malaria deaths worldwide declined by 20% over the past decade thanks to vaccines and nets.",
+            "why": "Proof that science and public health save lives.",
+            "source": "WHO",
+            "url": "https://www.who.int",
+            "color": "#42A5F5"
         },
         {
+            "category": "Culture",
+            "region": "Brazil",
             "headline": "Golden Lion Tamarins Return to Brazil\u2019s Forests",
-            "summary": "After years of breeding efforts, conservationists have reintroduced the rare golden lion tamarin into protected rainforests in Brazil."
+            "summary": "Conservationists reintroduced the rare golden lion tamarin into protected rainforest.",
+            "why": "Symbol of hope for endangered species recovery.",
+            "source": "Positive.News",
+            "url": "https://www.positive.news",
+            "color": "#EF5350"
         }
     ]
 }
