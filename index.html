@@ -1,29 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RNN — Real News Network</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNN — Real News Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">RNN</div>
-    <div class="meta">
-      <h1>REAL NEWS NETWORK</h1>
-      <p class="tagline">Only the Real. Only the Good.</p>
+    <div class="brand">
+      <div class="logo">RNN</div>
+      <div class="meta">
+        <h1>REAL NEWS NETWORK</h1>
+        <p class="tag">Only the Real. Only the Good.</p>
+      </div>
     </div>
     <hr class="divider">
-    <div class="ticker-wrap">
-      <div class="ticker" id="ticker"></div>
+    <div class="ticker-label">Top Headlines</div>
+    <div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+    <div class="controls">
+      <label for="filterCategory">Filter by Category:</label>
+      <select id="filterCategory"></select>
+      <input id="searchBox" type="search" placeholder="Search stories…">
     </div>
   </header>
-
-  <main>
-    <section class="featured" id="featured"></section>
-    <section class="grid" id="news-grid"></section>
+  <main id="feed">
+    <section class="featured"></section>
+    <section class="grid"></section>
+    <div class="archive-link"><a href="archive.html">See More Stories (Archive)</a></div>
   </main>
-
+  <footer class="site-footer">
+    <div>© 2025 RNN — Real News Network</div>
+    <div class="links">Powered by RNN · Established 2025</div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
