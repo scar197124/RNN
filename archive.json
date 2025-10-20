@@ -8,7 +8,8 @@
             "why": "Demonstrates the power of youth in climate action.",
             "source": "Good News Network",
             "url": "https://www.goodnewsnetwork.org",
-            "color": "#FFD54F"
+            "color": "#FFD54F",
+            "date": "2025-10-17"
         },
         {
             "category": "Health",
@@ -18,7 +19,8 @@
             "why": "Brings hope to those living with spinal injuries.",
             "source": "BBC",
             "url": "https://www.bbc.com",
-            "color": "#42A5F5"
+            "color": "#42A5F5",
+            "date": "2025-10-17"
         },
         {
             "category": "Breakthroughs",
@@ -28,7 +30,8 @@
             "why": "Affordable renewable energy reshapes the global market.",
             "source": "AP News",
             "url": "https://apnews.com",
-            "color": "#AB47BC"
+            "color": "#AB47BC",
+            "date": "2025-10-17"
         },
         {
             "category": "Health",
@@ -38,7 +41,8 @@
             "why": "Proof that science and public health save lives.",
             "source": "WHO",
             "url": "https://www.who.int",
-            "color": "#42A5F5"
+            "color": "#42A5F5",
+            "date": "2025-10-17"
         },
         {
             "category": "Culture",
@@ -48,7 +52,8 @@
             "why": "Symbol of hope for endangered species recovery.",
             "source": "Positive.News",
             "url": "https://www.positive.news",
-            "color": "#EF5350"
+            "color": "#EF5350",
+            "date": "2025-10-17"
         }
     ],
     "2025-10-20": [
@@ -60,7 +65,8 @@
             "why": "Shows how sustained reforestation efforts can reverse climate damage.",
             "source": "Positive.News",
             "url": "https://www.positive.news",
-            "color": "#4CAF50"
+            "color": "#4CAF50",
+            "date": "2025-10-20"
         },
         {
             "category": "Kindness",
@@ -70,7 +76,8 @@
             "why": "Demonstrates the power of youth in climate action.",
             "source": "Good News Network",
             "url": "https://www.goodnewsnetwork.org",
-            "color": "#FFD54F"
+            "color": "#FFD54F",
+            "date": "2025-10-20"
         },
         {
             "category": "Health",
@@ -80,7 +87,8 @@
             "why": "Brings hope to those living with spinal injuries.",
             "source": "BBC",
             "url": "https://www.bbc.com",
-            "color": "#42A5F5"
+            "color": "#42A5F5",
+            "date": "2025-10-20"
         },
         {
             "category": "Breakthroughs",
@@ -90,7 +98,8 @@
             "why": "Affordable renewable energy reshapes the global market.",
             "source": "AP News",
             "url": "https://apnews.com",
-            "color": "#AB47BC"
+            "color": "#AB47BC",
+            "date": "2025-10-20"
         },
         {
             "category": "Health",
@@ -100,7 +109,8 @@
             "why": "Proof that science and public health save lives.",
             "source": "WHO",
             "url": "https://www.who.int",
-            "color": "#42A5F5"
+            "color": "#42A5F5",
+            "date": "2025-10-20"
         },
         {
             "category": "Culture",
@@ -110,7 +120,8 @@
             "why": "Symbol of hope for endangered species recovery.",
             "source": "Positive.News",
             "url": "https://www.positive.news",
-            "color": "#EF5350"
+            "color": "#EF5350",
+            "date": "2025-10-20"
         }
     ]
 }
