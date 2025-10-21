@@ -1,6 +1,105 @@
 [
     {
         "category": "Earth",
+        "region": "Canada",
+        "headline": "Canada Bans Single-Use Plastics Nationwide",
+        "summary": "A new nationwide law bans single-use plastics in Canada, cutting waste and protecting wildlife.",
+        "why": "A bold step toward a cleaner, greener future.",
+        "source": "CBC",
+        "url": "https://www.cbc.ca",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Health",
+        "region": "India",
+        "headline": "India Launches Free Cancer Screening for Rural Women",
+        "summary": "New program screens millions of rural women for breast and cervical cancer at no cost.",
+        "why": "Expands life-saving healthcare access.",
+        "source": "Times of India",
+        "url": "https://timesofindia.indiatimes.com",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Kindness",
+        "region": "USA",
+        "headline": "High School Seniors Build Homes for Veterans",
+        "summary": "A group of U.S. high school seniors constructed tiny homes for homeless veterans as their final project.",
+        "why": "Youth-driven kindness restores dignity for veterans.",
+        "source": "Good News Network",
+        "url": "https://www.goodnewsnetwork.org",
+        "color": "#FFD54F",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Breakthroughs",
+        "region": "Germany",
+        "headline": "Scientists Create Plastic-Eating Enzyme",
+        "summary": "German scientists engineered an enzyme that can break down PET plastics in days instead of centuries.",
+        "why": "Could transform recycling and waste management globally.",
+        "source": "Reuters",
+        "url": "https://www.reuters.com",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Culture",
+        "region": "Caribbean",
+        "headline": "Trinidad Carnival Declared UNESCO Cultural Heritage",
+        "summary": "UNESCO recognized Trinidad\u2019s Carnival as a global treasure of cultural heritage.",
+        "why": "Celebrates cultural pride and identity in the Caribbean.",
+        "source": "Trinidad Guardian",
+        "url": "https://guardian.co.tt",
+        "color": "#EF5350",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Earth",
+        "region": "Africa",
+        "headline": "Kenya Plants 100 Million Trees in Climate Drive",
+        "summary": "Kenya surpassed its annual goal by planting over 100 million trees in one year.",
+        "why": "Large-scale reforestation strengthens climate resilience.",
+        "source": "Nation Africa",
+        "url": "https://nation.africa",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Health",
+        "region": "Brazil",
+        "headline": "Brazil Eliminates Rubella Virus Nationwide",
+        "summary": "Brazil officially eliminated rubella after years of nationwide vaccination efforts.",
+        "why": "A public health victory preventing birth defects and illness.",
+        "source": "Folha de S\u00e3o Paulo",
+        "url": "https://www.folha.uol.com.br",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Kindness",
+        "region": "UK",
+        "headline": "London Caf\u00e9 Lets Customers Pay With Acts of Kindness",
+        "summary": "A caf\u00e9 in London allows customers to pay their bill by pledging small acts of kindness in the community.",
+        "why": "Spreads generosity and inspires daily compassion.",
+        "source": "BBC",
+        "url": "https://www.bbc.com",
+        "color": "#FFD54F",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Breakthroughs",
+        "region": "Japan",
+        "headline": "Japan Tests First Hydrogen-Powered Passenger Train",
+        "summary": "Japan rolled out its first hydrogen-powered train, reducing emissions while maintaining efficiency.",
+        "why": "Marks a breakthrough in sustainable mass transport.",
+        "source": "Japan Times",
+        "url": "https://www.japantimes.co.jp",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+    },
+    {
+        "category": "Earth",
         "region": "Caribbean",
         "headline": "Dominica Expands Marine Reserve to Protect Coral Reefs",
         "summary": "The government added thousands of hectares of ocean territory to its marine park, giving endangered corals and fish a better chance to thrive.",
