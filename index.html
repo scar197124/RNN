@@ -18,22 +18,31 @@
     </div>
     <hr class="divider">
     <div class="ticker-label">Top Headlines</div>
-    <div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+    <div class="ticker-wrap"><div class="ticker">
+      <div class='ticker-item'><a href='https://www.goodnewsnetwork.org' target='_blank'>Local café feeds the homeless every Sunday</a></div><div class='ticker-item'><a href='https://www.positive.news' target='_blank'>Amazon reforestation sees record growth</a></div><div class='ticker-item'><a href='https://www.sciencedaily.com' target='_blank'>Breakthrough in Alzheimer’s research</a></div><div class='ticker-item'><a href='https://www.bbc.com/future' target='_blank'>Solar-powered water pumps change farming communities</a></div><div class='ticker-item'><a href='https://www.japantimes.co.jp' target='_blank'>Ancient art revived by new generation</a></div><div class='ticker-item'><a href='https://www.euronews.com/green' target='_blank'>This week’s good news at a glance</a></div>
+    </div></div>
     <div class="controls">
       <label for="filterCategory">Filter by Category:</label>
-      <select id="filterCategory"></select>
+      <select id="filterCategory">
+        <option value="">All Categories</option>
+        <option>Kindness</option><option>Earth</option><option>Health</option><option>Breakthroughs</option><option>Culture</option><option>Round‑up</option>
+      </select>
       <input id="searchBox" type="search" placeholder="Search stories…">
     </div>
   </header>
   <main id="feed">
     <section class="featured"></section>
     <section class="grid"></section>
-    <div class="archive-link"><a href="archive.html">See More Stories (Archive)</a></div>
+    <div class="archive-link"><a href="#">See More Stories (Archive)</a></div>
   </main>
   <footer class="site-footer">
     <div>© 2025 RNN — Real News Network</div>
     <div class="links">Powered by RNN · Established 2025</div>
   </footer>
+  <script>
+    window.RNN_STORIES = [{"category": "Kindness", "region": "Canada", "headline": "Local caf\u00e9 feeds the homeless every Sunday", "summary": "A small caf\u00e9 in Toronto offers free meals weekly to those in need.", "why": "It shows community care in action.", "source": "Good News Network", "url": "https://www.goodnewsnetwork.org", "color": "#FFD54F"}, {"category": "Earth", "region": "Brazil", "headline": "Amazon reforestation sees record growth", "summary": "Thousands of new trees planted across deforested areas.", "why": "Vital for climate resilience.", "source": "Positive.News", "url": "https://www.positive.news", "color": "#4CAF50"}, {"category": "Health", "region": "USA", "headline": "Breakthrough in Alzheimer\u2019s research", "summary": "Scientists discover a treatment that slows memory loss.", "why": "Brings hope to millions.", "source": "Science Daily", "url": "https://www.sciencedaily.com", "color": "#42A5F5"}, {"category": "Breakthroughs", "region": "Kenya", "headline": "Solar-powered water pumps change farming communities", "summary": "Villages in Kenya now irrigate fields sustainably using sunlight.", "why": "Empowers small farmers and reduces climate stress.", "source": "BBC Future", "url": "https://www.bbc.com/future", "color": "#AB47BC"}, {"category": "Culture", "region": "Japan", "headline": "Ancient art revived by new generation", "summary": "Young artisans bring traditional papermaking into modern design.", "why": "Keeps cultural heritage alive for the future.", "source": "Japan Times", "url": "https://www.japantimes.co.jp", "color": "#EF5350"}, {"category": "Round\u2011up", "region": "Global", "headline": "This week\u2019s good news at a glance", "summary": "Highlights: sea turtles rebound, coral nurseries thrive, city bike-sharing breaks records.", "why": "Proof of positive progress across the planet.", "source": "Euronews Green", "url": "https://www.euronews.com/green", "color": "#90A4AE"}];
+    window.RNN_UPDATED = "Oct 19, 2025 14:19";
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
