@@ -60,7 +60,7 @@
     <div class="logo-box">RNN</div>
     <div class="site-title">Real News Network</div>
     <div class="header-buttons">
-      <a class="btn" href="#history">History</a>
+      <button class="btn" id="history-btn">History</button>
       <button class="btn" id="refresh-btn" onclick="location.reload()">Refresh</button>
       <a class="btn" href="rnn_master.json" download>Download Data</a>
     </div>
@@ -88,9 +88,12 @@
   </div>
 
   
-  <div class="container" id="history">
+  <div class="container hidden-wrap" id="history-section" style="display:none;">
     <div class="section-title">Archive / History</div>
     <section class="grid" id="archive-grid"></section>
+    <div class="see-more">
+      <button class="btn" id="close-history-btn">Close History</button>
+    </div>
   </div>
 
   <div class="footer">
@@ -137,9 +140,26 @@
 
       const headlines = visible.slice(0,6).map(s => s.headline).join(" • ");
 
+      const historyBtn = document.querySelector('#history-btn');
+      const historySection = document.querySelector('#history-section');
+      const closeHistoryBtn = document.querySelector('#close-history-btn');
       const archiveGrid = document.querySelector('#archive-grid');
-      if (archiveGrid && data.archive) {
-        data.archive.forEach(s => archiveGrid.appendChild(card(s)));
+
+      if (historyBtn && historySection) {
+        historyBtn.addEventListener('click', () => {
+          historySection.style.display = 'block';
+          archiveGrid.innerHTML = '';
+          if (data.archive) {
+            data.archive.forEach(s => archiveGrid.appendChild(card(s)));
+          }
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+      }
+      if (closeHistoryBtn) {
+        closeHistoryBtn.addEventListener('click', () => {
+          historySection.style.display = 'none';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       }
 
       document.querySelector('#ticker-text').textContent = headlines || 'Positive news rolling...';
