@@ -6,12 +6,43 @@
   <title>RNN — Real News Network</title>
   <meta name="description" content="Positive news feed highlighting uplifting, verified stories.">
   <link rel="stylesheet" href="assets/rnn.css">
+  <style>
+    header.header-by {
+      background:#000;
+      color:#FFD700;
+      border-radius:12px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:8px;
+      box-shadow:0 0 10px rgba(255,215,0,0.4);
+    }
+    header.header-by .logo {
+      width:60px;height:60px;border-radius:16px;
+      background:linear-gradient(135deg,#FFD700,#FFA500);
+      box-shadow:0 0 0 6px rgba(255,215,0,0.3);
+    }
+    header.header-by h1 {
+      margin:0;
+      font-size:28px;
+      letter-spacing:1px;
+      color:#FFD700;
+    }
+    header.header-by .meta { color:#fef9c3 }
+    header.header-by .btn {
+      background:#FFD700;color:#000;border:1px solid #d4af37;
+      font-weight:600;
+    }
+    header.header-by .btn:hover { background:#facc15 }
+  </style>
 </head>
 <body>
   <div class="container">
-    <header class="header" style="flex-direction:column;align-items:center;text-align:center;gap:6px">
-      <div class="logo" style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#22d3ee, #8b5cf6);box-shadow:0 0 0 8px rgba(34,211,238,.25)"></div>
-      <h1 style="margin:0;font-size:28px;letter-spacing:1px">RNN — Real News Network</h1>
+    <header class="header-by">
+      <div class="logo"></div>
+      <h1>RNN — Real News Network</h1>
       <div class="meta">Last updated: <span id="last-updated"></span> • 20 stories + 5 in See More</div>
       <div class="controls" style="margin-top:12px">
         <button class="btn" id="refresh-btn" onclick="location.reload()">Refresh</button>
