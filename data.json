@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "project": "RNN - Real News Network",
+    "version": "homepage-v1",
+    "last_updated": "2025-10-22 03:00",
+    "note": "20 visible stories + 5 in See More"
+  },
+  "today": {
+    "visible": [
+      {
+        "category": "Health",
+        "region": "Greece",
+        "headline": "Greece Launches National Mental Health Helpline",
+        "summary": "24/7 support line opens access to care nationwide.",
+        "why": "Makes help easier to reach in tough moments.",
+        "source": "Ekathimerini",
+        "url": "https://www.ekathimerini.com",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Health",
+        "region": "Canada",
+        "headline": "New Treatment Approved for Rare Childhood Disorder",
+        "summary": "Regulators green\u2011light a therapy that dramatically improves outcomes.",
+        "why": "Offers hope to families facing long odds.",
+        "source": "Health Canada",
+        "url": "https://www.canada.ca",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Health",
+        "region": "Ethiopia",
+        "headline": "Ethiopia Expands Free Childhood Vaccination Clinics",
+        "summary": "Mobile teams reach remote communities with life\u2011saving shots.",
+        "why": "Protects the youngest from preventable disease.",
+        "source": "WHO Africa",
+        "url": "https://www.afro.who.int",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Culture",
+        "region": "Indonesia",
+        "headline": "World\u2019s Largest Batik Exhibition Opens in Jakarta",
+        "summary": "Artists showcase traditional techniques with modern designs.",
+        "why": "Celebrates living craft and identity.",
+        "source": "Jakarta Post",
+        "url": "https://www.thejakartapost.com",
+        "color": "#EF5350",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Culture",
+        "region": "Poland",
+        "headline": "Ancient Jewish Cemetery Restored in Warsaw",
+        "summary": "Volunteers and historians preserve headstones and pathways.",
+        "why": "Honors memory and history with care.",
+        "source": "Poland In",
+        "url": "https://poland.pl",
+        "color": "#EF5350",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Culture",
+        "region": "Caribbean",
+        "headline": "Steel Pan Festival Brings Islands Together",
+        "summary": "Bands from across the Caribbean gather to celebrate and compete.",
+        "why": "Keeps music heritage vibrant and global.",
+        "source": "Loop Caribbean",
+        "url": "https://www.loopnews.com",
+        "color": "#EF5350",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Breakthroughs",
+        "region": "USA",
+        "headline": "NASA Tests Space\u2011Grown Lettuce for Long Missions",
+        "summary": "Astronauts trial fresh produce grown in orbit for nutrition and morale.",
+        "why": "Steps toward sustainable deep\u2011space travel.",
+        "source": "NASA",
+        "url": "https://www.nasa.gov",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Breakthroughs",
+        "region": "Australia",
+        "headline": "Spray\u2011On Solar Turns Walls Into Power Panels",
+        "summary": "A printable photovoltaic coating can harvest sunlight on common surfaces.",
+        "why": "Expands clean energy to everyday materials.",
+        "source": "ABC Australia",
+        "url": "https://www.abc.net.au",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Breakthroughs",
+        "region": "India",
+        "headline": "Low\u2011Cost Water Purifier Brings Clean Drinking Water to Villages",
+        "summary": "Researchers created an affordable filter for arsenic and pathogens.",
+        "why": "Healthier families through accessible tech.",
+        "source": "Times of India",
+        "url": "https://timesofindia.indiatimes.com",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Kindness",
+        "region": "Germany",
+        "headline": "German Cities Offer Free Winter Transit for the Homeless",
+        "summary": "Cold\u2011weather passes provide warmth, mobility, and access to shelters.",
+        "why": "Dignity and safety during the harshest months.",
+        "source": "DW",
+        "url": "https://www.dw.com",
+        "color": "#FFD54F",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "Trinidad & Tobago",
+        "headline": "Trinidad Volunteers Restore Coastal Mangroves",
+        "summary": "Community groups plant seedlings to protect shorelines and sea life.",
+        "why": "Natural defenses against storms and erosion.",
+        "source": "Trinidad Guardian",
+        "url": "https://guardian.co.tt",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Kindness",
+        "region": "Japan",
+        "headline": "Students Build Smart Walker to Help Seniors",
+        "summary": "Engineering students designed a device that improves balance and safety for elders.",
+        "why": "Blends compassion with practical tech.",
+        "source": "Japan Times",
+        "url": "https://www.japantimes.co.jp",
+        "color": "#FFD54F",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "Scotland",
+        "headline": "Scotland Runs on Wind for an Entire Weekend",
+        "summary": "Wind turbines generated enough electricity to power the nation twice over.",
+        "why": "Shows renewable grids can carry the load.",
+        "source": "BBC",
+        "url": "https://www.bbc.com",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "Brazil",
+        "headline": "Amazon Deforestation Falls to Multi\u2011Year Low",
+        "summary": "Stronger protection and enforcement lead to sharp declines in forest loss.",
+        "why": "Safeguards biodiversity and stabilizes climate.",
+        "source": "Folha de S\u00e3o Paulo",
+        "url": "https://www.folha.uol.com.br",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "Kenya",
+        "headline": "Kenya Opens Africa\u2019s Largest Wind Farm",
+        "summary": "A new wind farm brings clean electricity to nearly a million homes.",
+        "why": "Cuts emissions while expanding reliable power.",
+        "source": "Nation Africa",
+        "url": "https://nation.africa",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Breakthroughs",
+        "region": "South Korea",
+        "headline": "World\u2019s First Biodegradable Battery Developed",
+        "summary": "Researchers in South Korea unveiled a fully biodegradable battery made from paper and zinc.",
+        "why": "Tackles e-waste and powers the future sustainably.",
+        "source": "Reuters",
+        "url": "https://www.reuters.com",
+        "color": "#AB47BC",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "USA",
+        "headline": "New York City Plants 1 Million Trees Ahead of Schedule",
+        "summary": "NYC reached its goal of planting 1 million trees two years earlier than planned, cooling neighborhoods and cleaning the air.",
+        "why": "A concrete jungle turning greener for the future.",
+        "source": "NYC Parks",
+        "url": "https://www.nycgovparks.org",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Health",
+        "region": "UK",
+        "headline": "Gene Therapy Restores Sight in Children With Rare Blindness",
+        "summary": "Doctors in the UK successfully treated children born with inherited blindness using a breakthrough gene therapy.",
+        "why": "Restores sight and hope where none existed.",
+        "source": "BBC",
+        "url": "https://www.bbc.com",
+        "color": "#42A5F5",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Earth",
+        "region": "Caribbean",
+        "headline": "Dominica Expands Marine Reserve to Protect Coral Reefs",
+        "summary": "The government added thousands of hectares of ocean territory to its marine park, giving endangered corals and fish a better chance to thrive.",
+        "why": "Strengthens island ecosystems that guard against climate change.",
+        "source": "Dominica News Online",
+        "url": "https://dominicanewsonline.com",
+        "color": "#4CAF50",
+        "date": "2025-10-21"
+      },
+      {
+        "category": "Kindness",
+        "region": "Africa",
+        "headline": "Community Builds Solar School in Remote Ghanaian Village",
+        "summary": "Locals and volunteers came together to construct a fully solar-powered school in northern Ghana, bringing reliable light and internet to students for the first time.",
+        "why": "Grassroots kindness empowers education.",
+        "source": "Good News Network",
+        "url": "https://www.goodnewsnetwork.org",
+        "color": "#FFD54F",
+        "date": "2025-10-21"
+      }
+    ],
+    "hidden": [
+      {
+        "category": "Culture",
+        "region": "Peru",
+        "headline": "Ancient Inca Trail Reopens After Restoration",
+        "summary": "Peru restored long-hidden sections of the Inca Trail, opening them to hikers and cultural tourism.",
+        "why": "Revives history while boosting local economies.",
+        "source": "AP News",
+        "url": "https://apnews.com",
+        "color": "#EF5350",
+        "date": "2025-10-21"
+      }
+    ]
+  }
+}
