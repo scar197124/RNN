@@ -30,27 +30,8 @@
     }
     .header-buttons .btn:hover { background:#facc15; }
     
-    
-    .ticker {
-      background: #FFD700;       /* Yellow bar */
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
-      color: #000;               /* Black text */
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      height: 32px;
-      display: flex;
-      align-items: center;
-    }
-    .ticker p {
-      position: absolute;
-      will-change: transform;
-      white-space: nowrap;
-      font-weight: 600;
-      padding: 0 20px;
-    }
-
+    .ticker { background:#111; border-top:1px solid #FFD700; border-bottom:1px solid #FFD700; color:#FFD700; overflow:hidden; }
+    .ticker p { display:inline-block; white-space:nowrap; will-change: transform; }
     .ticker p.run { animation: tickerItem 12s linear 1; }
     @keyframes tickerItem { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
 
@@ -88,18 +69,16 @@
   <div class="container">
     <div class="section-title">Today’s Highlights</div>
     <section class="grid" id="visible-grid"></section>
-
     <div class="see-more">
-      <button class="btn" id="see-more-btn">See More (5)</button>
+      <button class="btn" id="toggle-archive-btn">See More (Archives)</button>
     </div>
-
-    <section class="hidden-wrap">
-      <div class="section-title">More Good News</div>
-      <div class="grid" id="hidden-grid"></div>
-      <div class="see-more">
-        <button class="btn" id="collapse-btn">Collapse</button>
-      </div>
+    <section class="hidden-wrap" id="archive-wrap">
+      <div class="section-title">Archive / History</div>
+      <div class="grid" id="archive-grid"></div>
     </section>
+
+
+    
   </div>
 
   
@@ -118,10 +97,11 @@
       const res = await fetch('rnn_master.json').catch(()=>null);
       if(!res) return;
       const data = await res.json();
-      const visible = data.today?.visible || [];
-      const hidden = data.today?.hidden || [];
+      
       const visGrid = document.querySelector('#visible-grid');
-      const hidGrid = document.querySelector('#hidden-grid');
+      const archiveWrap = document.querySelector('#archive-wrap');
+      const archiveGrid = document.querySelector('#archive-grid');
+      const toggleBtn = document.querySelector('#toggle-archive-btn');
       const lastUpdated = document.querySelector('#last-updated');
       if(lastUpdated) lastUpdated.textContent = data.meta?.last_updated || '';
 
@@ -148,30 +128,38 @@
         return el;
       }
 
-      visible.forEach(s => visGrid.appendChild(card(s)));
-      hidden.forEach(s => hidGrid.appendChild(card(s)));
+      // Show up to 15 current stories
+      const maxStories = 15;
+      visible.slice(0, maxStories).forEach(s => visGrid.appendChild(card(s)));
 
-      const archiveGrid = document.querySelector('#archive-grid');
+      // Load archive but keep hidden
       if (archiveGrid && data.archive) {
         data.archive.forEach(s => archiveGrid.appendChild(card(s)));
       }
 
-      
+      // Toggle archive visibility
+      toggleBtn.addEventListener('click', () => {
+        if (archiveWrap.style.display === 'block') {
+          archiveWrap.style.display = 'none';
+          toggleBtn.textContent = 'See More (Archives)';
+        } else {
+          archiveWrap.style.display = 'block';
+          toggleBtn.textContent = 'Collapse';
+        }
+      });
+
+      // Ticker logic stays
       const ticker = document.querySelector('#ticker-text');
       const headlines = visible.map(s => s.headline);
       let i = 0;
-
       function showNext() {
         if (headlines.length === 0) {
           ticker.textContent = 'Positive news rolling...';
           return;
         }
-
         ticker.textContent = headlines[i];
-        ticker.style.transform = `translateX(${window.innerWidth}px)`; // start off right
-
-        const duration = 10000; // 10 seconds scroll
-
+        ticker.style.transform = `translateX(${window.innerWidth}px)`;
+        const duration = 10000;
         ticker.animate([
           { transform: `translateX(${window.innerWidth}px)` },
           { transform: `translateX(-${ticker.offsetWidth}px)` }
@@ -179,9 +167,8 @@
           duration: duration,
           easing: 'linear'
         });
-
         i = (i + 1) % headlines.length;
-        setTimeout(showNext, duration + 5000); // 5 sec gap
+        setTimeout(showNext, duration + 5000);
       }
       showNext();
 
