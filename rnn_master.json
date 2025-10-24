@@ -1,114 +1,224 @@
 {
   "meta": {
     "project": "RNN - Real News Network",
-    "last_updated": "2025-10-23"
+    "last_updated": "2025-10-24"
   },
   "today": {
     "visible": [
       {
-        "headline": "Rwanda Launches National Blood Drone Network Expansion",
-        "summary": "Life\u2011saving deliveries now reach an additional 300 rural clinics within minutes.",
-        "why": "Cuts emergency wait times and saves mothers and newborns.",
-        "category": "Health",
-        "region": "Rwanda",
-        "source": "International News",
-        "url": "https://example.com/rwanda-blood-drones",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Spain Converts Abandoned Rail Lines Into Countrywide Bike Paths",
-        "summary": "New 'greenways' connect towns with safe, scenic cycling routes.",
-        "why": "Boosts local tourism and healthy transport.",
-        "category": "Community",
-        "region": "Spain",
-        "source": "International News",
-        "url": "https://example.com/spain-greenways",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Scientists Unveil Recyclable Battery That Charges to 80% in 5 Minutes",
-        "summary": "A new chemistry allows ultra\u2011fast charging with easy end\u2011of\u2011life recycling.",
-        "why": "Speeds EV adoption while cutting e\u2011waste.",
-        "category": "Science",
-        "region": "Global",
-        "source": "International News",
-        "url": "https://example.com/recyclable-fast-charge-battery",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Community Fridges in Jamaica Slash Food Waste",
-        "summary": "Neighborhood groups install solar\u2011powered fridges stocked with surplus food.",
-        "why": "Feeds families and keeps good food out of landfills.",
-        "category": "Community",
-        "region": "Jamaica",
-        "source": "International News",
-        "url": "https://example.com/jamaica-community-fridges",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Finland Opens Free National Coding Curriculum for All Ages",
-        "summary": "Public platform offers beginner\u2011to\u2011advanced courses in multiple languages.",
-        "why": "Democratizes tech skills and future\u2011proofs workers.",
-        "category": "Innovation",
-        "region": "Finland",
-        "source": "International News",
-        "url": "https://example.com/finland-open-coding",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Sri Lanka Restores 50,000 Wells With Rain\u2011Recharge Design",
-        "summary": "Semi\u2011arid villages retrofit old wells to capture monsoon runoff.",
-        "why": "Secures water and revives traditional know\u2011how.",
+        "date": "2025-10-24",
+        "region": "Kenya",
         "category": "Environment",
-        "region": "Sri Lanka",
+        "headline": "Kenya\u2019s New Forest Belt Stops Desert Spread",
+        "summary": "A green wall of 20 million trees halts advancing desert in northern Kenya.",
+        "why": "Protects farmland, boosts rainfall, and restores biodiversity.",
         "source": "International News",
-        "url": "https://example.com/srilanka-recharge-wells",
-        "date": "2025-10-23"
+        "url": "https://example.com/kenya-forest-belt",
+        "color": "#22c55e"
       },
       {
-        "headline": "Indigenous Fire Stewardship Reduces Wildfire Risk in California",
-        "summary": "Cultural burns lower fuel loads and restore native habitats.",
-        "why": "Blends ancestral knowledge with modern resilience.",
-        "category": "Earth",
-        "region": "USA",
-        "source": "International News",
-        "url": "https://example.com/indigenous-fire-stewardship",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Botswana Expands Wildlife Corridors for Elephants",
-        "summary": "New protected routes reconnect herds across key habitats.",
-        "why": "Prevents conflict and supports migration.",
-        "category": "Wildlife",
-        "region": "Botswana",
-        "source": "International News",
-        "url": "https://example.com/botswana-wildlife-corridors",
-        "date": "2025-10-23"
-      },
-      {
-        "headline": "Brazil Favela Coding Bootcamps Place 5,000 Youth in Tech Jobs",
-        "summary": "Scholarship program links graduates with partner companies.",
-        "why": "Transforms local talent into career opportunities.",
+        "date": "2025-10-24",
+        "region": "Germany",
         "category": "Community",
-        "region": "Brazil",
+        "headline": "Germany Offers Free Public Transit for Seniors",
+        "summary": "Nationwide program grants unlimited free bus and rail travel to people over 65.",
+        "why": "Cuts isolation and carbon emissions.",
         "source": "International News",
-        "url": "https://example.com/brazil-favela-bootcamps",
-        "date": "2025-10-23"
+        "url": "https://example.com/germany-senior-transit",
+        "color": "#3b82f6"
       },
       {
-        "headline": "World\u2019s First Zero\u2011Waste Stadium Opens in Denmark",
-        "summary": "Composting, reusables, and on\u2011site recycling turn match days circular.",
-        "why": "Shows large events can be low\u2011impact and fun.",
-        "category": "Innovation",
-        "region": "Denmark",
+        "date": "2025-10-24",
+        "region": "India",
+        "category": "Education",
+        "headline": "India\u2019s Solar Schools Light the Night",
+        "summary": "Rural schools install rooftop solar, powering night classes for children.",
+        "why": "Expands education access where electricity is unreliable.",
         "source": "International News",
-        "url": "https://example.com/denmark-zero-waste-stadium",
-        "date": "2025-10-23"
+        "url": "https://example.com/india-solar-schools",
+        "color": "#f59e0b"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Chile",
+        "category": "Wildlife",
+        "headline": "Chile Protects 1,000 Miles of Coastline",
+        "summary": "New marine reserve safeguards whales, penguins, and fisheries.",
+        "why": "Largest ocean protection effort in South America.",
+        "source": "International News",
+        "url": "https://example.com/chile-marine-reserve",
+        "color": "#06b6d4"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Japan",
+        "category": "Innovation",
+        "headline": "Japan\u2019s Robot Farmers Double Rice Yields",
+        "summary": "AI-driven tractors and drones revolutionize sustainable rice farming.",
+        "why": "Increases food security while cutting labor strain.",
+        "source": "International News",
+        "url": "https://example.com/japan-robot-farms",
+        "color": "#a855f7"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Uganda",
+        "category": "Culture",
+        "headline": "Uganda Opens Pan-African Music School",
+        "summary": "Kampala campus unites students from 20 countries in African traditional music.",
+        "why": "Preserves heritage and fuels cultural pride.",
+        "source": "International News",
+        "url": "https://example.com/uganda-music-school",
+        "color": "#ef4444"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Iceland",
+        "category": "Energy",
+        "headline": "Iceland Runs Entire Week on Geothermal Energy",
+        "summary": "A milestone as the grid supplies 100% renewable energy for seven straight days.",
+        "why": "Proof renewable baseload power is possible.",
+        "source": "International News",
+        "url": "https://example.com/iceland-geothermal-week",
+        "color": "#14b8a6"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "USA",
+        "category": "Environment",
+        "headline": "USA City Converts Vacant Lots Into Pollinator Parks",
+        "summary": "Detroit transforms 200 abandoned lots into flowering bee sanctuaries.",
+        "why": "Restores nature in urban spaces.",
+        "source": "International News",
+        "url": "https://example.com/detroit-pollinator-parks",
+        "color": "#84cc16"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Philippines",
+        "category": "Science",
+        "headline": "Philippines\u2019 Coral Farms Rebuild Reefs",
+        "summary": "Divers plant heat-resistant corals across degraded reef zones.",
+        "why": "Protects fisheries and coastal defense.",
+        "source": "International News",
+        "url": "https://example.com/philippines-coral-farms",
+        "color": "#0ea5e9"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Canada",
+        "category": "Health",
+        "headline": "Canada Launches Universal Mental Health Hotline",
+        "summary": "24/7 service connects every citizen to free mental health support.",
+        "why": "Makes mental health care accessible nationwide.",
+        "source": "International News",
+        "url": "https://example.com/canada-mental-health-hotline",
+        "color": "#f97316"
       }
     ],
     "hidden": []
   },
   "archive": [
+    {
+      "headline": "Rwanda Launches National Blood Drone Network Expansion",
+      "summary": "Life\u2011saving deliveries now reach an additional 300 rural clinics within minutes.",
+      "why": "Cuts emergency wait times and saves mothers and newborns.",
+      "category": "Health",
+      "region": "Rwanda",
+      "source": "International News",
+      "url": "https://example.com/rwanda-blood-drones",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Spain Converts Abandoned Rail Lines Into Countrywide Bike Paths",
+      "summary": "New 'greenways' connect towns with safe, scenic cycling routes.",
+      "why": "Boosts local tourism and healthy transport.",
+      "category": "Community",
+      "region": "Spain",
+      "source": "International News",
+      "url": "https://example.com/spain-greenways",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Scientists Unveil Recyclable Battery That Charges to 80% in 5 Minutes",
+      "summary": "A new chemistry allows ultra\u2011fast charging with easy end\u2011of\u2011life recycling.",
+      "why": "Speeds EV adoption while cutting e\u2011waste.",
+      "category": "Science",
+      "region": "Global",
+      "source": "International News",
+      "url": "https://example.com/recyclable-fast-charge-battery",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Community Fridges in Jamaica Slash Food Waste",
+      "summary": "Neighborhood groups install solar\u2011powered fridges stocked with surplus food.",
+      "why": "Feeds families and keeps good food out of landfills.",
+      "category": "Community",
+      "region": "Jamaica",
+      "source": "International News",
+      "url": "https://example.com/jamaica-community-fridges",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Finland Opens Free National Coding Curriculum for All Ages",
+      "summary": "Public platform offers beginner\u2011to\u2011advanced courses in multiple languages.",
+      "why": "Democratizes tech skills and future\u2011proofs workers.",
+      "category": "Innovation",
+      "region": "Finland",
+      "source": "International News",
+      "url": "https://example.com/finland-open-coding",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Sri Lanka Restores 50,000 Wells With Rain\u2011Recharge Design",
+      "summary": "Semi\u2011arid villages retrofit old wells to capture monsoon runoff.",
+      "why": "Secures water and revives traditional know\u2011how.",
+      "category": "Environment",
+      "region": "Sri Lanka",
+      "source": "International News",
+      "url": "https://example.com/srilanka-recharge-wells",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Indigenous Fire Stewardship Reduces Wildfire Risk in California",
+      "summary": "Cultural burns lower fuel loads and restore native habitats.",
+      "why": "Blends ancestral knowledge with modern resilience.",
+      "category": "Earth",
+      "region": "USA",
+      "source": "International News",
+      "url": "https://example.com/indigenous-fire-stewardship",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Botswana Expands Wildlife Corridors for Elephants",
+      "summary": "New protected routes reconnect herds across key habitats.",
+      "why": "Prevents conflict and supports migration.",
+      "category": "Wildlife",
+      "region": "Botswana",
+      "source": "International News",
+      "url": "https://example.com/botswana-wildlife-corridors",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "Brazil Favela Coding Bootcamps Place 5,000 Youth in Tech Jobs",
+      "summary": "Scholarship program links graduates with partner companies.",
+      "why": "Transforms local talent into career opportunities.",
+      "category": "Community",
+      "region": "Brazil",
+      "source": "International News",
+      "url": "https://example.com/brazil-favela-bootcamps",
+      "date": "2025-10-23"
+    },
+    {
+      "headline": "World\u2019s First Zero\u2011Waste Stadium Opens in Denmark",
+      "summary": "Composting, reusables, and on\u2011site recycling turn match days circular.",
+      "why": "Shows large events can be low\u2011impact and fun.",
+      "category": "Innovation",
+      "region": "Denmark",
+      "source": "International News",
+      "url": "https://example.com/denmark-zero-waste-stadium",
+      "date": "2025-10-23"
+    },
     {
       "headline": "Earlier archived story 1",
       "summary": "Summary...",
