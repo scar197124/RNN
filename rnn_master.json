@@ -4,84 +4,124 @@
     "last_updated": "2025-10-24"
   },
   "today": {
-    "date": "2025-10-24",
     "visible": [
       {
-        "title": "Greece Opens World’s Largest Floating Solar Farm",
-        "summary": "Stretching across 220 hectares, the new floating solar array can power 75,000 homes. It shows how water surfaces can generate massive clean power without taking up land.",
-        "category": "Energy",
         "date": "2025-10-24",
-        "link": "#"
-      },
-      {
-        "title": "Uganda Launches Electric Bus Fleet in Kampala",
-        "summary": "Kampala welcomed Africa’s newest electric bus system. The fleet cuts air pollution, lowers costs, and signals a shift to clean transit across African cities.",
-        "category": "Transport",
-        "date": "2025-10-24",
-        "link": "#"
-      },
-      {
-        "title": "Canada Bans Microplastic Glitter Nationwide",
-        "summary": "Canada has banned the sale of microplastic glitter, a move expected to reduce harmful particles in rivers and oceans, protecting marine life and ecosystems.",
+        "region": "Kenya",
         "category": "Environment",
-        "date": "2025-10-24",
-        "link": "#"
+        "headline": "Kenya\u2019s New Forest Belt Stops Desert Spread",
+        "summary": "A green wall of 20 million trees halts advancing desert in northern Kenya.",
+        "why": "Protects farmland, boosts rainfall, and restores biodiversity.",
+        "source": "International News",
+        "url": "https://example.com/kenya-forest-belt",
+        "color": "#22c55e"
       },
       {
-        "title": "South Korea Restores Ancient Forest with Drones",
-        "summary": "AI-powered drone swarms reseeded 50,000 acres of wildfire-damaged forest. The drones plant trees quickly, reviving ecosystems and helping fight climate change.",
-        "category": "Environment",
         "date": "2025-10-24",
-        "link": "#"
+        "region": "Germany",
+        "category": "Community",
+        "headline": "Germany Offers Free Public Transit for Seniors",
+        "summary": "Nationwide program grants unlimited free bus and rail travel to people over 65.",
+        "why": "Cuts isolation and carbon emissions.",
+        "source": "International News",
+        "url": "https://example.com/germany-senior-transit",
+        "color": "#3b82f6"
       },
       {
-        "title": "Brazil’s New Ocean Sanctuary Protects Coral Reefs",
-        "summary": "Brazil announced a 300,000 sq km marine park to safeguard coral reefs, fish, and marine life — a huge win for biodiversity in the South Atlantic.",
+        "date": "2025-10-24",
+        "region": "India",
+        "category": "Education",
+        "headline": "India\u2019s Solar Schools Light the Night",
+        "summary": "Rural schools install rooftop solar, powering night classes for children.",
+        "why": "Expands education access where electricity is unreliable.",
+        "source": "International News",
+        "url": "https://example.com/india-solar-schools",
+        "color": "#f59e0b"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Chile",
         "category": "Wildlife",
-        "date": "2025-10-24",
-        "link": "#"
+        "headline": "Chile Protects 1,000 Miles of Coastline",
+        "summary": "New marine reserve safeguards whales, penguins, and fisheries.",
+        "why": "Largest ocean protection effort in South America.",
+        "source": "International News",
+        "url": "https://example.com/chile-marine-reserve",
+        "color": "#06b6d4"
       },
       {
-        "title": "Scotland Achieves 90% Renewable Energy Milestone",
-        "summary": "Wind and tidal power now generate nearly all of Scotland’s electricity. This landmark proves a modern economy can thrive on renewable sources.",
-        "category": "Energy",
         "date": "2025-10-24",
-        "link": "#"
-      },
-      {
-        "title": "Japan’s “Food Waste to Fuel” Project Expands",
-        "summary": "Supermarkets in Japan are converting unsold food into bioethanol fuel. The program now powers buses in several cities and is set to expand nationwide.",
+        "region": "Japan",
         "category": "Innovation",
-        "date": "2025-10-24",
-        "link": "#"
+        "headline": "Japan\u2019s Robot Farmers Double Rice Yields",
+        "summary": "AI-driven tractors and drones revolutionize sustainable rice farming.",
+        "why": "Increases food security while cutting labor strain.",
+        "source": "International News",
+        "url": "https://example.com/japan-robot-farms",
+        "color": "#a855f7"
       },
       {
-        "title": "Kenya’s Elephant Population Hits 50-Year High",
-        "summary": "Kenya reported its elephant population is the highest in 50 years, thanks to strong conservation programs and anti-poaching measures.",
-        "category": "Wildlife",
         "date": "2025-10-24",
-        "link": "#"
+        "region": "Uganda",
+        "category": "Culture",
+        "headline": "Uganda Opens Pan-African Music School",
+        "summary": "Kampala campus unites students from 20 countries in African traditional music.",
+        "why": "Preserves heritage and fuels cultural pride.",
+        "source": "International News",
+        "url": "https://example.com/uganda-music-school",
+        "color": "#ef4444"
       },
       {
-        "title": "India Installs World’s Cheapest Solar Panels",
-        "summary": "A new generation of ultra-thin solar panels has dropped costs to $0.15 per watt. Rooftop solar adoption in India is now accelerating rapidly.",
+        "date": "2025-10-24",
+        "region": "Iceland",
         "category": "Energy",
-        "date": "2025-10-24",
-        "link": "#"
+        "headline": "Iceland Runs Entire Week on Geothermal Energy",
+        "summary": "A milestone as the grid supplies 100% renewable energy for seven straight days.",
+        "why": "Proof renewable baseload power is possible.",
+        "source": "International News",
+        "url": "https://example.com/iceland-geothermal-week",
+        "color": "#14b8a6"
       },
       {
-        "title": "NASA Confirms Lunar Ice Drilling Mission in 2026",
-        "summary": "NASA confirmed a mission to drill into the Moon’s south pole in search of frozen water. Success could support astronauts and future lunar bases.",
-        "category": "Space",
         "date": "2025-10-24",
-        "link": "#"
+        "region": "USA",
+        "category": "Environment",
+        "headline": "USA City Converts Vacant Lots Into Pollinator Parks",
+        "summary": "Detroit transforms 200 abandoned lots into flowering bee sanctuaries.",
+        "why": "Restores nature in urban spaces.",
+        "source": "International News",
+        "url": "https://example.com/detroit-pollinator-parks",
+        "color": "#84cc16"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Philippines",
+        "category": "Science",
+        "headline": "Philippines\u2019 Coral Farms Rebuild Reefs",
+        "summary": "Divers plant heat-resistant corals across degraded reef zones.",
+        "why": "Protects fisheries and coastal defense.",
+        "source": "International News",
+        "url": "https://example.com/philippines-coral-farms",
+        "color": "#0ea5e9"
+      },
+      {
+        "date": "2025-10-24",
+        "region": "Canada",
+        "category": "Health",
+        "headline": "Canada Launches Universal Mental Health Hotline",
+        "summary": "24/7 service connects every citizen to free mental health support.",
+        "why": "Makes mental health care accessible nationwide.",
+        "source": "International News",
+        "url": "https://example.com/canada-mental-health-hotline",
+        "color": "#f97316"
       }
-    ]
+    ],
+    "hidden": []
   },
   "archive": [
     {
       "headline": "Rwanda Launches National Blood Drone Network Expansion",
-      "summary": "Life‑saving deliveries now reach an additional 300 rural clinics within minutes.",
+      "summary": "Life\u2011saving deliveries now reach an additional 300 rural clinics within minutes.",
       "why": "Cuts emergency wait times and saves mothers and newborns.",
       "category": "Health",
       "region": "Rwanda",
@@ -101,8 +141,8 @@
     },
     {
       "headline": "Scientists Unveil Recyclable Battery That Charges to 80% in 5 Minutes",
-      "summary": "A new chemistry allows ultra‑fast charging with easy end‑of‑life recycling.",
-      "why": "Speeds EV adoption while cutting e‑waste.",
+      "summary": "A new chemistry allows ultra\u2011fast charging with easy end\u2011of\u2011life recycling.",
+      "why": "Speeds EV adoption while cutting e\u2011waste.",
       "category": "Science",
       "region": "Global",
       "source": "International News",
@@ -111,7 +151,7 @@
     },
     {
       "headline": "Community Fridges in Jamaica Slash Food Waste",
-      "summary": "Neighborhood groups install solar‑powered fridges stocked with surplus food.",
+      "summary": "Neighborhood groups install solar\u2011powered fridges stocked with surplus food.",
       "why": "Feeds families and keeps good food out of landfills.",
       "category": "Community",
       "region": "Jamaica",
@@ -121,8 +161,8 @@
     },
     {
       "headline": "Finland Opens Free National Coding Curriculum for All Ages",
-      "summary": "Public platform offers beginner‑to‑advanced courses in multiple languages.",
-      "why": "Democratizes tech skills and future‑proofs workers.",
+      "summary": "Public platform offers beginner\u2011to\u2011advanced courses in multiple languages.",
+      "why": "Democratizes tech skills and future\u2011proofs workers.",
       "category": "Innovation",
       "region": "Finland",
       "source": "International News",
@@ -130,9 +170,9 @@
       "date": "2025-10-23"
     },
     {
-      "headline": "Sri Lanka Restores 50,000 Wells With Rain‑Recharge Design",
-      "summary": "Semi‑arid villages retrofit old wells to capture monsoon runoff.",
-      "why": "Secures water and revives traditional know‑how.",
+      "headline": "Sri Lanka Restores 50,000 Wells With Rain\u2011Recharge Design",
+      "summary": "Semi\u2011arid villages retrofit old wells to capture monsoon runoff.",
+      "why": "Secures water and revives traditional know\u2011how.",
       "category": "Environment",
       "region": "Sri Lanka",
       "source": "International News",
@@ -170,9 +210,9 @@
       "date": "2025-10-23"
     },
     {
-      "headline": "World’s First Zero‑Waste Stadium Opens in Denmark",
-      "summary": "Composting, reusables, and on‑site recycling turn match days circular.",
-      "why": "Shows large events can be low‑impact and fun.",
+      "headline": "World\u2019s First Zero\u2011Waste Stadium Opens in Denmark",
+      "summary": "Composting, reusables, and on\u2011site recycling turn match days circular.",
+      "why": "Shows large events can be low\u2011impact and fun.",
       "category": "Innovation",
       "region": "Denmark",
       "source": "International News",
@@ -200,7 +240,7 @@
       "date": "2025-10-21"
     },
     {
-      "headline": "UK’s smallest seabird records record breeding season",
+      "headline": "UK\u2019s smallest seabird records record breeding season",
       "summary": "The little tern makes a remarkable comeback after decades of decline.",
       "why": "Conservation efforts show tangible results for biodiversity.",
       "category": "Environment",
@@ -240,8 +280,8 @@
       "date": "2025-10-21"
     },
     {
-      "headline": "Indoor CO₂ filter system developed for homes and offices",
-      "summary": "Scientists create a groundbreaking device that can scrub CO₂ from indoor air.",
+      "headline": "Indoor CO\u2082 filter system developed for homes and offices",
+      "summary": "Scientists create a groundbreaking device that can scrub CO\u2082 from indoor air.",
       "why": "Improves air quality and fights climate change at a personal scale.",
       "category": "Science",
       "region": "Global",
@@ -271,7 +311,7 @@
     },
     {
       "headline": "Father raps bedtime story, goes viral",
-      "summary": "A father’s rap performance of a bedtime story spreads joy and encourages literacy.",
+      "summary": "A father\u2019s rap performance of a bedtime story spreads joy and encourages literacy.",
       "why": "Highlights creativity and family connection.",
       "category": "Culture",
       "region": "USA",
@@ -292,7 +332,7 @@
     {
       "headline": "Kenya distributes 10,000 solar lamps to rural families",
       "summary": "A program provides renewable energy access and reduces dependence on kerosene.",
-      "why": "Improves children’s education and reduces health risks.",
+      "why": "Improves children\u2019s education and reduces health risks.",
       "category": "Energy",
       "region": "Kenya",
       "source": "International News",
@@ -310,7 +350,7 @@
       "date": "2025-10-21"
     },
     {
-      "headline": "São Paulo records sharp drop in urban air pollution",
+      "headline": "S\u00e3o Paulo records sharp drop in urban air pollution",
       "summary": "Electric buses and green corridors reduce harmful emissions across the city.",
       "why": "Improves public health and combats climate change.",
       "category": "Environment",
@@ -338,121 +378,6 @@
       "source": "International News",
       "url": "https://example.com/jordan-cooperative",
       "date": "2025-10-21"
-    },
-    {
-      "date": "previous",
-      "stories": [
-        {
-          "date": "2025-10-24",
-          "region": "Kenya",
-          "category": "Environment",
-          "headline": "Kenya’s New Forest Belt Stops Desert Spread",
-          "summary": "A green wall of 20 million trees halts advancing desert in northern Kenya.",
-          "why": "Protects farmland, boosts rainfall, and restores biodiversity.",
-          "source": "International News",
-          "url": "https://example.com/kenya-forest-belt",
-          "color": "#22c55e"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Germany",
-          "category": "Community",
-          "headline": "Germany Offers Free Public Transit for Seniors",
-          "summary": "Nationwide program grants unlimited free bus and rail travel to people over 65.",
-          "why": "Cuts isolation and carbon emissions.",
-          "source": "International News",
-          "url": "https://example.com/germany-senior-transit",
-          "color": "#3b82f6"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "India",
-          "category": "Education",
-          "headline": "India’s Solar Schools Light the Night",
-          "summary": "Rural schools install rooftop solar, powering night classes for children.",
-          "why": "Expands education access where electricity is unreliable.",
-          "source": "International News",
-          "url": "https://example.com/india-solar-schools",
-          "color": "#f59e0b"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Chile",
-          "category": "Wildlife",
-          "headline": "Chile Protects 1,000 Miles of Coastline",
-          "summary": "New marine reserve safeguards whales, penguins, and fisheries.",
-          "why": "Largest ocean protection effort in South America.",
-          "source": "International News",
-          "url": "https://example.com/chile-marine-reserve",
-          "color": "#06b6d4"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Japan",
-          "category": "Innovation",
-          "headline": "Japan’s Robot Farmers Double Rice Yields",
-          "summary": "AI-driven tractors and drones revolutionize sustainable rice farming.",
-          "why": "Increases food security while cutting labor strain.",
-          "source": "International News",
-          "url": "https://example.com/japan-robot-farms",
-          "color": "#a855f7"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Uganda",
-          "category": "Culture",
-          "headline": "Uganda Opens Pan-African Music School",
-          "summary": "Kampala campus unites students from 20 countries in African traditional music.",
-          "why": "Preserves heritage and fuels cultural pride.",
-          "source": "International News",
-          "url": "https://example.com/uganda-music-school",
-          "color": "#ef4444"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Iceland",
-          "category": "Energy",
-          "headline": "Iceland Runs Entire Week on Geothermal Energy",
-          "summary": "A milestone as the grid supplies 100% renewable energy for seven straight days.",
-          "why": "Proof renewable baseload power is possible.",
-          "source": "International News",
-          "url": "https://example.com/iceland-geothermal-week",
-          "color": "#14b8a6"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "USA",
-          "category": "Environment",
-          "headline": "USA City Converts Vacant Lots Into Pollinator Parks",
-          "summary": "Detroit transforms 200 abandoned lots into flowering bee sanctuaries.",
-          "why": "Restores nature in urban spaces.",
-          "source": "International News",
-          "url": "https://example.com/detroit-pollinator-parks",
-          "color": "#84cc16"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Philippines",
-          "category": "Science",
-          "headline": "Philippines’ Coral Farms Rebuild Reefs",
-          "summary": "Divers plant heat-resistant corals across degraded reef zones.",
-          "why": "Protects fisheries and coastal defense.",
-          "source": "International News",
-          "url": "https://example.com/philippines-coral-farms",
-          "color": "#0ea5e9"
-        },
-        {
-          "date": "2025-10-24",
-          "region": "Canada",
-          "category": "Health",
-          "headline": "Canada Launches Universal Mental Health Hotline",
-          "summary": "24/7 service connects every citizen to free mental health support.",
-          "why": "Makes mental health care accessible nationwide.",
-          "source": "International News",
-          "url": "https://example.com/canada-mental-health-hotline",
-          "color": "#f97316"
-        }
-      ]
     }
   ]
 }
