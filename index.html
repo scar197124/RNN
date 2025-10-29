@@ -1,159 +1,318 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RNN — Real News Network</title>
   <style>
-    body { margin:0; font-family: system-ui, sans-serif; background:#0b0e13; color:#e5e7eb; }
-    header.rnn-header {
-      background:#000; color:#FFD700; border-bottom:2px solid #FFD700;
-      display:flex; flex-direction:column; align-items:center; text-align:center; padding:16px;
-    }
-    .logo-box {
-      background:linear-gradient(135deg,#FFD700,#FFA500);
-      color:#000; font-weight:900; font-size:32px;
-      padding:16px 32px; border-radius:10px; margin-bottom:8px;
-      font-family: 'Trebuchet MS', sans-serif; letter-spacing:3px;
-      box-shadow:0 0 15px rgba(255,215,0,0.6), inset 0 0 6px rgba(0,0,0,0.4);
-      text-shadow: 1px 1px 2px #fff, 2px 2px 4px rgba(0,0,0,0.6);
-      -webkit-text-stroke: 1px #FFD700;
-    }
-    .site-title { 
-      font-size:24px; font-weight:700; color:#FFD700; margin-bottom:12px;
-      font-family: Georgia, serif; letter-spacing:1px; text-shadow:1px 1px 3px #000;
-    }
-    .header-buttons { display:flex; gap:12px; }
-    .header-buttons .btn {
-      background:#FFD700; color:#000; border:none; border-radius:6px;
-      padding:8px 14px; cursor:pointer; font-weight:600;
-    }
-    .header-buttons .btn:hover { background:#facc15; }
-    
-    .ticker { background:#111; border-top:1px solid #FFD700; border-bottom:1px solid #FFD700; color:#FFD700; overflow:hidden; }
-    .ticker p { display:inline-block; white-space:nowrap; will-change: transform; }
-    .ticker p.run { animation: tickerItem 12s linear 1; }
-    @keyframes tickerItem { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
+    :root{--bg:#000;--soft:#0f0f0f;--ink:#fff;--muted:#bbb;--ring:#FFD700}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--ring);text-decoration:none} a:hover{text-decoration:underline}
 
-      100% { transform: translateX(-100%); }
-    }
-    .container { max-width:1100px; margin:0 auto; padding:20px; }
-    .section-title{margin:16px 0 8px;font-size:16px;color:#cbd5e1}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-    .card{background:#121722;border:1px solid #1c2433;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
-    .badges{display:flex;gap:6px;flex-wrap:wrap;font-size:12px}
-    .badge{padding:2px 6px;border-radius:6px;background:#1f2937;color:#d1d5db}
-    h3{margin:0;font-size:17px}
-    .why{font-size:13px;color:#cbd5e1}
-    .footer{margin-top:20px;text-align:center;font-size:13px;color:#9aa3af;padding:10px}
-    .see-more{margin:16px 0;text-align:center}
-    .see-more .btn{background:#FFD700;color:#000;border:none;border-radius:6px;padding:6px 12px;font-weight:600;cursor:pointer}
-    .hidden-wrap{display:none}
+    header{position:sticky;top:0;z-index:10;background:#000;border-bottom:2px solid var(--ring)}
+    .wrap{text-align:center;padding:16px}
+    h1{margin:0;color:var(--ring);font-size:26px}
+    .tag{color:var(--muted);font-size:14px;margin-top:4px}
+
+    .ticker{overflow:hidden;white-space:nowrap;background:var(--ring);color:#000;border-top:1px solid #222;border-bottom:1px solid #222}
+    .ticker__row{display:inline-block;padding:10px 0;animation:slide 80s linear infinite}
+    .ticker__item{display:inline-flex;align-items:center;gap:10px;margin:0 28px;font-size:14px}
+    .dot{width:6px;height:6px;border-radius:50%;background:#000;display:inline-block}
+    @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .highlight{background:var(--soft);border:2px solid var(--ring);border-radius:14px;margin:20px 16px;padding:18px;box-shadow:0 0 28px rgba(255,215,0,.1)}
+    .highlight h2{margin:.25rem 0 .2rem;color:var(--ring)}
+    .meta{color:var(--muted);font-size:12px;margin-top:6px}
+    .why{color:var(--ring);font-style:italic;font-size:14px;margin:.3rem 0 0}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:16px}
+    .card{background:#0b0b0b;border:1.5px solid var(--ring);border-radius:12px;padding:14px;transition:transform .15s ease, box-shadow .15s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.15)}
+    .card h3{margin:0 0 6px;color:var(--ring);font-size:18px}
+    .card p{margin:0 0 8px}
+
+    footer{text-align:center;color:#888;padding:28px 12px;font-size:12px;border-top:1px solid #222;margin-top:12px}
   </style>
 </head>
 <body>
-  <header class="rnn-header">
-    <div class="logo-box">RNN</div>
-    <div class="site-title">Real News Network</div>
-    <div class="header-buttons">
-      <a class="btn" href="#history">History</a>
-      <button class="btn" id="refresh-btn" onclick="location.reload()">Refresh</button>
-      <a class="btn" href="rnn_master.json" download>Download Data</a>
+  <header>
+    <div class="wrap">
+      <h1>RNN — Real News Network</h1>
+      <div class="tag">Only the Real. Only the Good.</div>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__row" id="tickerA"></div>
+      <div class="ticker__row" id="tickerB"></div>
     </div>
   </header>
 
-  <div class="ticker">
-    <p id="ticker-text">Loading highlights...</p>
-  </div>
+  <section class="highlight wrap" id="highlight" aria-live="polite"></section>
+  <main class="grid" id="grid" aria-live="polite"></main>
 
-  <div class="container">
-    <div class="section-title">Today’s Highlights</div>
-    <section class="grid" id="visible-grid"></section>
+  <footer><div id="updated">Last updated: <span></span></div></footer>
 
-    <div class="see-more">
-      <button class="btn" id="see-more-btn">See More (5)</button>
-    </div>
-
-    <section class="hidden-wrap">
-      <div class="section-title">More Good News</div>
-      <div class="grid" id="hidden-grid"></div>
-      <div class="see-more">
-        <button class="btn" id="collapse-btn">Collapse</button>
-      </div>
-    </section>
-  </div>
-
-  
-  <div class="container" id="history">
-    <div class="section-title">Archive / History</div>
-    <section class="grid" id="archive-grid"></section>
-  </div>
-
-  <div class="footer">
-    Last updated: <span id="last-updated"></span>
-  </div>
-
-  
   <script>
-    async function loadRNN(){
-      const res = await fetch('rnn_master.json').catch(()=>null);
-      if(!res) return;
-      const data = await res.json();
-      const visible = data.today?.visible || [];
-      const hidden = data.today?.hidden || [];
-      const visGrid = document.querySelector('#visible-grid');
-      const hidGrid = document.querySelector('#hidden-grid');
-      const lastUpdated = document.querySelector('#last-updated');
-      if(lastUpdated) lastUpdated.textContent = data.meta?.last_updated || '';
+    const STORIES = [
+  {
+    "title": "Tiny-Home Villages Scale Up (USA)",
+    "summary": "Cities and nonprofits expand tiny-home communities with wraparound services.",
+    "why": "Dignity + support helps people exit chronic homelessness.",
+    "source": "https://operationtinyhome.org/",
+    "ticker": "U.S. Tiny-Home Villages Scale Up"
+  },
+  {
+    "title": "Free Nutritious Meals (Indonesia)",
+    "summary": "Nationwide program combats child malnutrition via school/community meals.",
+    "why": "Better learning, health and long-term earnings for a generation.",
+    "source": "https://apnews.com",
+    "ticker": "Indonesia Launches Free Nutritious Meals"
+  },
+  {
+    "title": "Protected Seascape (Philippines)",
+    "summary": "Panaon Island Protected Seascape safeguards vital Coral Triangle reefs.",
+    "why": "Community MPAs rebuild fish stocks and protect coasts.",
+    "source": "https://news.mongabay.com",
+    "ticker": "Philippines Protects Coral Hotspot"
+  },
+  {
+    "title": "Green Prescribing Expands (UK)",
+    "summary": "NHS pilots scale referrals to nature walks and gardening for wellbeing.",
+    "why": "Nature reduces anxiety and builds community ties.",
+    "source": "https://www.england.nhs.uk/personalisedcare/social-prescribing/",
+    "ticker": "UK Expands Green Prescribing"
+  },
+  {
+    "title": "High-Seas Treaty Threshold Met",
+    "summary": "Countries cross ratification threshold for UN high-seas biodiversity treaty.",
+    "why": "Enables protection of nearly half the planet's surface (the high seas).",
+    "source": "https://www.un.org/bbnj/",
+    "ticker": "UN High-Seas Treaty Advances"
+  },
+  {
+    "title": "Community Solar in Favelas (Brazil)",
+    "summary": "Local co-ops expand rooftop solar, lowering bills and training youth.",
+    "why": "Community-owned energy reduces poverty and emissions.",
+    "source": "https://www.revolusolar.org.br/",
+    "ticker": "Rio Favelas Grow Community Solar"
+  },
+  {
+    "title": "Community Forest Guards Double Tree Cover (Kenya)",
+    "summary": "Local patrols restore degraded forests, bringing back wildlife and water.",
+    "why": "Healthy forests = healthy communities and resilient ecosystems.",
+    "source": "https://www.greenbeltmovement.org",
+    "ticker": "Kenya Forest Guards Double Tree Cover"
+  },
+  {
+    "title": "World\u2019s Largest Direct-Air Capture Plant Opens (Iceland)",
+    "summary": "Plant begins removing CO2 directly from the air and storing underground.",
+    "why": "A big leap in carbon removal technology.",
+    "source": "https://climeworks.com",
+    "ticker": "Iceland Direct-Air Capture Opens"
+  },
+  {
+    "title": "Village Microgrids Deliver 24/7 Power (India)",
+    "summary": "Solar + batteries power rural villages, replacing diesel generators.",
+    "why": "Clean energy brings light, jobs, and opportunity.",
+    "source": "https://selco-india.com",
+    "ticker": "India Villages Gain 24/7 Solar Power"
+  },
+  {
+    "title": "Food Waste Apps Expand (Canada)",
+    "summary": "Apps connect consumers with surplus meals, cutting landfill waste.",
+    "why": "Less food waste means lower emissions and fuller bellies.",
+    "source": "https://toogoodtogo.com",
+    "ticker": "Canada Apps Slash Food Waste"
+  },
+  {
+    "title": "Elder Care Robotics Assist Seniors (Japan)",
+    "summary": "Robots provide support for mobility and companionship in aging society.",
+    "why": "Tech helps seniors live independently with dignity.",
+    "source": "https://asia.nikkei.com",
+    "ticker": "Japan Uses Robots for Elder Care"
+  },
+  {
+    "title": "Polio Cases Reach Record Low (Global)",
+    "summary": "Global eradication effort reports lowest ever polio cases worldwide.",
+    "why": "A disease once feared is close to eradication.",
+    "source": "https://polioeradication.org",
+    "ticker": "Global Polio Cases At Record Low"
+  },
+  {
+    "title": "Solar Desalination Brings Clean Water (Morocco)",
+    "summary": "Innovative solar plants provide safe drinking water in arid regions.",
+    "why": "Tackling water scarcity with renewable energy.",
+    "source": "https://www.iwmi.cgiar.org",
+    "ticker": "Morocco Solar Desalination Expands"
+  },
+  {
+    "title": "Urban Farms Feed Cities (USA)",
+    "summary": "Vertical farms produce fresh greens year-round in urban centers.",
+    "why": "Local food with smaller footprints.",
+    "source": "https://www.plenty.ag",
+    "ticker": "Urban Farming Expands in USA"
+  },
+  {
+    "title": "Wildlife Corridor Restores Migration (Tanzania)",
+    "summary": "Communities and NGOs restore elephant migration paths.",
+    "why": "Corridors reduce conflict and boost biodiversity.",
+    "source": "https://wwf.panda.org",
+    "ticker": "Tanzania Opens Elephant Corridor"
+  },
+  {
+    "title": "Youth Climate Courts (Chile)",
+    "summary": "Youth councils influence climate policy through local climate courts.",
+    "why": "Youth voices guide environmental justice.",
+    "source": "https://climatejustice.org",
+    "ticker": "Chile Youth Climate Courts Active"
+  },
+  {
+    "title": "Floating Solar Islands (Netherlands)",
+    "summary": "Floating solar farms expand renewable generation without using land.",
+    "why": "Efficient, innovative solar expansion.",
+    "source": "https://www.floating-solar.nl",
+    "ticker": "Netherlands Floating Solar Expands"
+  },
+  {
+    "title": "Wild Bison Return (UK)",
+    "summary": "Bison released in Kent woodland as rewilding experiment.",
+    "why": "Rewilding restores ecosystems and biodiversity.",
+    "source": "https://rewildingeurope.com",
+    "ticker": "UK Bison Released in Kent"
+  },
+  {
+    "title": "Plastic-Eating Enzymes Breakthrough (France)",
+    "summary": "Scientists engineer enzymes that rapidly degrade PET plastic.",
+    "why": "Science turns waste into new resources.",
+    "source": "https://www.nature.com",
+    "ticker": "France Breakthrough in Plastic Enzymes"
+  },
+  {
+    "title": "Solar-Powered Cold Storage (Nigeria)",
+    "summary": "Farmers use solar cold rooms to preserve harvests and cut waste.",
+    "why": "Boosts farmer incomes and food security.",
+    "source": "https://coldhubs.com",
+    "ticker": "Nigeria Solar Cold Storage Expands"
+  },
+  {
+    "title": "Mangrove Restoration Success (Bangladesh)",
+    "summary": "Community planting restores mangroves, protecting coasts from storms.",
+    "why": "Mangroves = nature\u2019s sea walls.",
+    "source": "https://www.icraf.org",
+    "ticker": "Bangladesh Restores Mangroves"
+  },
+  {
+    "title": "Libraries of Things (Germany)",
+    "summary": "Communities open libraries where people borrow tools & appliances.",
+    "why": "Sharing economy reduces waste and costs.",
+    "source": "https://shareable.net",
+    "ticker": "Germany Expands Libraries of Things"
+  },
+  {
+    "title": "Indigenous Fire Management (Australia)",
+    "summary": "Traditional burning practices reduce mega-fires and restore ecology.",
+    "why": "Ancient knowledge meets modern resilience.",
+    "source": "https://theconversation.com",
+    "ticker": "Australia Revives Indigenous Fire Mgmt"
+  },
+  {
+    "title": "Solar Schools Network (South Africa)",
+    "summary": "Thousands of schools go solar, cutting costs and teaching sustainability.",
+    "why": "Children learn while lights stay on.",
+    "source": "https://green-schools.co.za",
+    "ticker": "South Africa Solar Schools Grow"
+  },
+  {
+    "title": "Bee-Friendly Highways (Sweden)",
+    "summary": "Roadsides turned into pollinator habitats support biodiversity.",
+    "why": "Infrastructure doubles as ecosystem support.",
+    "source": "https://www.theguardian.com",
+    "ticker": "Sweden Creates Bee-Friendly Highways"
+  },
+  {
+    "title": "100% Renewable Island (Denmark)",
+    "summary": "Sams\u00f8 Island runs fully on renewable energy.",
+    "why": "Proof communities can be carbon neutral.",
+    "source": "https://stateofgreen.com",
+    "ticker": "Denmark Island Goes 100% Renewable"
+  },
+  {
+    "title": "Ocean Cleanup Expands (Pacific)",
+    "summary": "Cleanup system removes record amount of plastic from Great Pacific Patch.",
+    "why": "Cleaner oceans for all life.",
+    "source": "https://theoceancleanup.com",
+    "ticker": "Pacific Ocean Cleanup Scales Up"
+  },
+  {
+    "title": "Tree-Planting Drones (UAE)",
+    "summary": "Drones plant millions of trees in desert landscapes.",
+    "why": "High-tech reforestation at scale.",
+    "source": "https://www.ecosia.org",
+    "ticker": "UAE Drones Plant Trees"
+  },
+  {
+    "title": "River Dolphins Return (China)",
+    "summary": "Yangtze River dolphin sightings increase after pollution controls.",
+    "why": "Healthy rivers bring wildlife back.",
+    "source": "https://www.scmp.com",
+    "ticker": "China Dolphins Return to Yangtze"
+  },
+  {
+    "title": "Solar Train Line (Australia)",
+    "summary": "Train line powers operations with solar energy.",
+    "why": "Transport runs clean and efficient.",
+    "source": "https://www.byronbaytrain.com.au",
+    "ticker": "Australia Runs Solar Train"
+  }
+];
 
-      function card(s){
-        const cat = s.category || '';
-        const color = s.color || '#3b82f6';
-        const region = s.region || '';
-        const src = s.source || '';
-        const url = s.url || '#';
-        const date = s.date || '';
-        const el = document.createElement('article');
-        el.className = 'card';
-        el.innerHTML = `
-          <div class="badges">
-            <span class="badge">${date}</span>
-            <span class="badge">${region}</span>
-            <span class="badge" style="background:${color};color:#000">${cat}</span>
-          </div>
-          <h3>${s.headline}</h3>
-          <p>${s.summary || ''}</p>
-          <p class="why">Why it matters: ${s.why || ''}</p>
-          <div><a class="badge" style="background:#FFD700;color:#000" href="${url}" target="_blank" rel="noopener">Source: ${src}</a></div>
-        `;
-        return el;
-      }
-
-      visible.forEach(s => visGrid.appendChild(card(s)));
-      hidden.forEach(s => hidGrid.appendChild(card(s)));
-
-      const archiveGrid = document.querySelector('#archive-grid');
-      if (archiveGrid && data.archive) {
-        data.archive.forEach(s => archiveGrid.appendChild(card(s)));
-      }
-
-      const ticker = document.querySelector('#ticker-text');
-      const headlines = visible.map(s => s.headline);
-      let i = 0;
-      function showNext(){
-        if (headlines.length === 0) {
-          ticker.textContent = 'Positive news rolling...';
-          return;
-        }
-        ticker.textContent = '\u00A0\u00A0' + headlines[i] + '\u00A0\u00A0';
-        ticker.classList.remove('run'); void ticker.offsetWidth; ticker.classList.add('run');
-        i = (i + 1) % headlines.length;
-        setTimeout(showNext, 5000);
-      }
-      showNext();
+    function storyCard(story){
+      const a = document.createElement("article");
+      a.className = "card";
+      a.innerHTML = `
+        <h3>${story.title}</h3>
+        <p>${story.summary}</p>
+        <p class="why">Why it matters: ${story.why}</p>
+        <p class="meta">Source: <a href="${story.source}" target="_blank" rel="noopener">Open</a></p>
+      `;
+      return a;
     }
-    document.addEventListener('DOMContentLoaded', loadRNN);
-  </script>
 
+    function renderStories(list){
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      list.forEach(s => grid.appendChild(storyCard(s)));
+    }
+
+    function renderHighlight(item){
+      const box = document.getElementById("highlight");
+      box.innerHTML = `
+        <h2>⭐ Highlight of the Day</h2>
+        <h3>${item.title}</h3>
+        <p>${item.summary}</p>
+        <p class="why">Why it matters: ${item.why}</p>
+        <p class="meta">Source: <a href="${item.source}" target="_blank" rel="noopener">Open</a></p>
+      `;
+    }
+
+    function buildTicker(items){
+      const makeRow = (elId) => {
+        const el = document.getElementById(elId);
+        el.innerHTML = items.map(s => (
+          `<span class="ticker__item"><span class="dot"></span>${s.ticker}</span>`
+        )).join("");
+      };
+      makeRow("tickerA");
+      makeRow("tickerB");
+    }
+
+    (function init(){
+      renderHighlight(STORIES[0]); // Tiny Homes as highlight
+      renderStories(STORIES);
+      buildTicker(STORIES);
+      document.querySelector("#updated span").textContent = new Date().toLocaleDateString();
+    })();
+  </script>
 </body>
 </html>
