@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNN — Real News Network</title>
+  <style>
+    body { margin:0; font-family: system-ui, sans-serif; background:#0b0e13; color:#e5e7eb; }
+    header.rnn-header {
+      background:#000; color:#FFD700; border-bottom:2px solid #FFD700;
+      display:flex; flex-direction:column; align-items:center; text-align:center; padding:16px;
+    }
+    .logo-box {
+      background:linear-gradient(135deg,#FFD700,#FFA500);
+      color:#000; font-weight:900; font-size:32px;
+      padding:16px 32px; border-radius:10px; margin-bottom:8px;
+      font-family: 'Trebuchet MS', sans-serif; letter-spacing:3px;
+      box-shadow:0 0 15px rgba(255,215,0,0.6), inset 0 0 6px rgba(0,0,0,0.4);
+      text-shadow: 1px 1px 2px #fff, 2px 2px 4px rgba(0,0,0,0.6);
+      -webkit-text-stroke: 1px #FFD700;
+    }
+    .site-title { 
+      font-size:24px; font-weight:700; color:#FFD700; margin-bottom:12px;
+      font-family: Georgia, serif; letter-spacing:1px; text-shadow:1px 1px 3px #000;
+    }
+    .header-buttons { display:flex; gap:12px; }
+    .header-buttons .btn {
+      background:#FFD700; color:#000; border:none; border-radius:6px;
+      padding:8px 14px; cursor:pointer; font-weight:600;
+    }
+    .header-buttons .btn:hover { background:#facc15; }
+    
+    .ticker { background:#111; border-top:1px solid #FFD700; border-bottom:1px solid #FFD700; color:#FFD700; overflow:hidden; }
+    .ticker p { display:inline-block; white-space:nowrap; will-change: transform; }
+    .ticker p.run { animation: tickerItem 12s linear 1; }
+    @keyframes tickerItem { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
+
+      100% { transform: translateX(-100%); }
+    }
+    .container { max-width:1100px; margin:0 auto; padding:20px; }
+    .section-title{margin:16px 0 8px;font-size:16px;color:#cbd5e1}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+    .card{background:#121722;border:1px solid #1c2433;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+    .badges{display:flex;gap:6px;flex-wrap:wrap;font-size:12px}
+    .badge{padding:2px 6px;border-radius:6px;background:#1f2937;color:#d1d5db}
+    h3{margin:0;font-size:17px}
+    .why{font-size:13px;color:#cbd5e1}
+    .footer{margin-top:20px;text-align:center;font-size:13px;color:#9aa3af;padding:10px}
+    .see-more{margin:16px 0;text-align:center}
+    .see-more .btn{background:#FFD700;color:#000;border:none;border-radius:6px;padding:6px 12px;font-weight:600;cursor:pointer}
+    .hidden-wrap{display:none}
+  </style>
+</head>
+<body>
+  <header class="rnn-header">
+    <div class="logo-box">RNN</div>
+    <div class="site-title">Real News Network</div>
+    <div class="header-buttons">
+      <a class="btn" href="#history">History</a>
+      <button class="btn" id="refresh-btn" onclick="location.reload()">Refresh</button>
+      <a class="btn" href="rnn_master.json" download>Download Data</a>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <p id="ticker-text">Loading highlights...</p>
+  </div>
+
+  <div class="container">
+    <div class="section-title">Today’s Highlights</div>
+    <section class="grid" id="visible-grid"></section>
+
+    <div class="see-more">
+      <button class="btn" id="see-more-btn">See More (5)</button>
+    </div>
+
+    <section class="hidden-wrap">
+      <div class="section-title">More Good News</div>
+      <div class="grid" id="hidden-grid"></div>
+      <div class="see-more">
+        <button class="btn" id="collapse-btn">Collapse</button>
+      </div>
+    </section>
+  </div>
+
+  
+  <div class="container" id="history">
+    <div class="section-title">Archive / History</div>
+    <section class="grid" id="archive-grid"></section>
+  </div>
+
+  <div class="footer">
+    Last updated: <span id="last-updated"></span>
+  </div>
+
+  
+  <script>
+    async function loadRNN(){
+      const res = await fetch('rnn_master.json').catch(()=>null);
+      if(!res) return;
+      const data = await res.json();
+      const visible = data.today?.visible || [];
+      const hidden = data.today?.hidden || [];
+      const visGrid = document.querySelector('#visible-grid');
+      const hidGrid = document.querySelector('#hidden-grid');
+      const lastUpdated = document.querySelector('#last-updated');
+      if(lastUpdated) lastUpdated.textContent = data.meta?.last_updated || '';
+
+      function card(s){
+        const cat = s.category || '';
+        const color = s.color || '#3b82f6';
+        const region = s.region || '';
+        const src = s.source || '';
+        const url = s.url || '#';
+        const date = s.date || '';
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="badges">
+            <span class="badge">${date}</span>
+            <span class="badge">${region}</span>
+            <span class="badge" style="background:${color};color:#000">${cat}</span>
+          </div>
+          <h3>${s.headline}</h3>
+          <p>${s.summary || ''}</p>
+          <p class="why">Why it matters: ${s.why || ''}</p>
+          <div><a class="badge" style="background:#FFD700;color:#000" href="${url}" target="_blank" rel="noopener">Source: ${src}</a></div>
+        `;
+        return el;
+      }
+
+      visible.forEach(s => visGrid.appendChild(card(s)));
+      hidden.forEach(s => hidGrid.appendChild(card(s)));
+
+      const archiveGrid = document.querySelector('#archive-grid');
+      if (archiveGrid && data.archive) {
+        data.archive.forEach(s => archiveGrid.appendChild(card(s)));
+      }
+
+      const ticker = document.querySelector('#ticker-text');
+      const headlines = visible.map(s => s.headline);
+      let i = 0;
+      function showNext(){
+        if (headlines.length === 0) {
+          ticker.textContent = 'Positive news rolling...';
+          return;
+        }
+        ticker.textContent = '\u00A0\u00A0' + headlines[i] + '\u00A0\u00A0';
+        ticker.classList.remove('run'); void ticker.offsetWidth; ticker.classList.add('run');
+        i = (i + 1) % headlines.length;
+        setTimeout(showNext, 5000);
+      }
+      showNext();
+    }
+    document.addEventListener('DOMContentLoaded', loadRNN);
+  </script>
+
+</body>
+</html>
