@@ -54,8 +54,151 @@
   <footer><div id="updated">Last updated: <span></span></div></footer>
 
   <script>
-    const STORIES = [
+    
+    const NEW_STORIES = [
   {
+    "title": "Renewables Beat Coal Globally for the First Time (Global)",
+    "summary": "In H1 2025, clean power generation (solar, wind and other renewables) edged past coal globally, marking an historic energy transition milestone.",
+    "why": "Proof that the clean‑energy era isn’t theoretical—it’s here and scaling.",
+    "source": "https://ember-energy.org/latest-insights/global-electricity-mid-year-insights-2025/",
+    "ticker": "Clean Power Tops Coal (H1 2025)"
+  },
+  {
+    "title": "Global Ocean Treaty Advances Toward Protection (UN High Seas)",
+    "summary": "Nations cleared key thresholds to bring the High Seas Biodiversity Treaty into force, enabling protections across nearly half the planet’s surface.",
+    "why": "It opens the door to safeguarding ocean life beyond national borders.",
+    "source": "https://www.un.org/bbnj/",
+    "ticker": "High Seas Protection Advances"
+  },
+  {
+    "title": "World Happiness Report 2025 Highlights Kindness (Global)",
+    "summary": "Findings emphasize social trust and everyday kindness as strong drivers of well‑being in countries across the world.",
+    "why": "Reminds us that community and connection remain core to a good life.",
+    "source": "https://www.unsdsn.org/news/world-happiness-report-2025-people-are-much-kinder-than-we-expect-research-shows/",
+    "ticker": "Kindness Anchors Happiness"
+  },
+  {
+    "title": "‘Benevolence Bump’ Persists Years After Pandemic (Global)",
+    "summary": "Rates of volunteering and helping strangers remain around 10% higher than pre‑2020 levels, according to 2025 reporting.",
+    "why": "A lasting cultural shift toward pro‑social behavior.",
+    "source": "https://www.theguardian.com/lifeandstyle/2025/mar/20/covid-benevolence-bump-endures-kindness-10-higher-before-2020",
+    "ticker": "Kindness Still Up vs. 2019"
+  },
+  {
+    "title": "Record Clean Power Streaks in the U.S. (USA)",
+    "summary": "Analyses show record shares for wind and solar in 2025, with clean sources supplying a growing portion of U.S. electricity.",
+    "why": "Major grids are balancing high renewable shares in real time.",
+    "source": "https://www.reuters.com/markets/commodities/record-us-clean-power-run-rolls-through-may-maguire-2025-05-29/",
+    "ticker": "US Clean Power Records (2025)"
+  },
+  {
+    "title": "Australia Tips to Clean-Supply Majority (Australia)",
+    "summary": "In October 2025, Australia generated slightly more electricity from clean sources than fossil fuels for the first time.",
+    "why": "A coal exporter pivoting to clean power signals global momentum.",
+    "source": "https://www.reuters.com/business/energy/australias-clean-power-push-hits-pivotal-energy-transition-milestone-2025-11-06/",
+    "ticker": "Australia: Clean > Fossil (Oct)"
+  },
+  {
+    "title": "IEA: Record $3.3 Trillion Energy Investment in 2025 (Global)",
+    "summary": "The IEA projects global energy investment hitting a record $3.3T in 2025, with two‑thirds flowing to clean energy tech and grids.",
+    "why": "Capital is following the transition, speeding deployment worldwide.",
+    "source": "https://www.reuters.com/sustainability/boards-policy-regulation/global-energy-investment-set-hit-record-33-trillion-2025-iea-says-2025-06-05/",
+    "ticker": "Record $3.3T Energy Investment"
+  },
+  {
+    "title": "Togo Launches Nationwide Malaria Vaccination (Togo)",
+    "summary": "Togo joined a growing list of African nations rolling out malaria vaccines nationally to protect young children.",
+    "why": "Shots today prevent tragedy tomorrow for thousands of families.",
+    "source": "https://www.malariaconsortium.org/news/new-milestone-as-togo-launches-malaria-vaccine-nationwide",
+    "ticker": "Togo Rolls Out Malaria Vaccine"
+  },
+  {
+    "title": "Uganda Leads Historic Malaria Vaccine Drive (Uganda)",
+    "summary": "Uganda launched one of Africa’s largest malaria vaccine campaigns in 2025, part of a continental expansion.",
+    "why": "A turning point against a disease that has long burdened communities.",
+    "source": "https://www.nature.com/articles/d44148-025-00245-8",
+    "ticker": "Uganda’s Big Malaria Rollout"
+  },
+  {
+    "title": "WHO: More Nations Adopting Malaria Vaccines (Africa)",
+    "summary": "WHO and partners report 20 African countries have introduced malaria vaccines, with more joining through 2025.",
+    "why": "Coordinated public‑health action saves young lives at scale.",
+    "source": "https://www.who.int/news/item/24-04-2025-who-calls-for-revitalized-efforts-to-end-malaria",
+    "ticker": "Malaria Vaccines Scale Across Africa"
+  },
+  {
+    "title": "Sea Turtles Rebound as Protections Expand (Global)",
+    "summary": "A 2025 review highlights rising sea‑turtle nest counts in many regions as conservation pays off.",
+    "why": "Nature responds when we give it space and time.",
+    "source": "https://www.goodnewsnetwork.org/sea-turtles-rebounding-worldwide-as-nests-and-habitat-are-being-protected-says-2025-noaa-study/",
+    "ticker": "Sea Turtle Nests Rising"
+  },
+  {
+    "title": "Clean Power Share Climbs to Records (Global)",
+    "summary": "Mid‑year data show clean electricity hit a record 43% share globally in H1 2025, continuing multi‑year gains.",
+    "why": "Sustained, compounding growth—the curve is bending.",
+    "source": "https://www.reuters.com/business/energy/mid-year-check-up-global-energy-transition-progress-2025-07-24/",
+    "ticker": "Global Clean Share Hits Record"
+  },
+  {
+    "title": "Community Kindness Keeps Rising (Global)",
+    "summary": "Roundups from trusted outlets show weekly wins: nature recoveries, shared fridges, and mutual‑aid projects scaling.",
+    "why": "Small local wins, everywhere, add up to big change.",
+    "source": "https://www.positive.news/society/good-news-stories-from-week-39-of-2025/",
+    "ticker": "What Went Right This Week"
+  },
+  {
+    "title": "Positive Environmental Innovations (Europe)",
+    "summary": "Creative solutions—from grazing‑friendly solar tiles to reuse breakthroughs—are cutting emissions while boosting livelihoods.",
+    "why": "Innovation works best when it helps people and planet together.",
+    "source": "https://www.euronews.com/green/2025/05/24/solar-grazing-tile-whipping-and-whisky-positive-environmental-stories-from-2025",
+    "ticker": "Creative Climate Solutions"
+  },
+  {
+    "title": "US Clean Energy Share Reaches 44% YTD (USA)",
+    "summary": "Analysts estimate clean sources generated roughly 44% of U.S. electricity to date in 2025—up sharply from a decade ago.",
+    "why": "A big market shifting its core power mix changes everything.",
+    "source": "https://www.reuters.com/markets/commodities/us-fossil-fuel-electricity-output-emissions-hit-2025-peaks-2025-08-27/",
+    "ticker": "US Clean Share ~44% (2025)"
+  },
+  {
+    "title": "Global Kindness & Connection Drive Well‑Being (Global)",
+    "summary": "Universities and nonprofits report that helping others measurably boosts individual happiness and community health.",
+    "why": "Science keeps finding that kindness is a smart life strategy.",
+    "source": "https://www.georgetown.edu/news/neuroscientist-tips-for-a-happier-2025/",
+    "ticker": "Neuroscience of Kindness"
+  },
+  {
+    "title": "More Countries Plan 2025 Malaria Vaccine Rollouts (Africa)",
+    "summary": "Gavi notes 6–8 additional countries (including Uganda, Ethiopia, Guinea, Mali, Burundi) are preparing national rollouts in 2025.",
+    "why": "Momentum matters—each rollout protects another generation.",
+    "source": "https://www.gavi.org/news/media-room/one-year-anniversary-malaria-vaccine-rollout-underscores-remarkable-progress-offers",
+    "ticker": "Next Wave: Malaria Vaccines 2025"
+  },
+  {
+    "title": "River Interceptors Stop Trash Before the Sea (Guatemala)",
+    "summary": "River‑trash Interceptors captured massive loads before reaching the ocean, preventing marine pollution downstream.",
+    "why": "Prevention at the source is the most efficient cleanup.",
+    "source": "https://mygreenlab.org/the-beaker-blog/five-uplifting-sustainability-news-stories-this-earth-day/",
+    "ticker": "River Interceptors Win"
+  },
+  {
+    "title": "Clean Energy Keeps Scaling Across Regions (USA)",
+    "summary": "Even where growth slowed, 2025 still saw broadening clean‑energy capacity across more states and grids.",
+    "why": "Diffusion beats delay—the transition is spreading.",
+    "source": "https://www.reuters.com/markets/commodities/us-clean-energy-capacity-growth-gets-slower-wider-2025-2025-08-13/",
+    "ticker": "Clean Energy Spreads Wider"
+  },
+  {
+    "title": "Weekly Rounds of Good News Build Hope (Global)",
+    "summary": "Curated ‘good news’ roundups highlight citizen action, conservation, and community fixes around the world.",
+    "why": "Attention is a resource—what we amplify grows.",
+    "source": "https://www.goodgoodgood.co/articles/good-news-this-week-october-4-2025",
+    "ticker": "Weekly Wins, Worldwide"
+  }
+];
+    const OLD_STORIES = [
+{
     "title": "Grad in a Cap and Gown Covers Burger King Shift (USA)",
     "summary": "18-year-old Mykale Baker worked his understaffed Burger King on graduation night; a viral video sparked donations nearing $200k and a scholarship boost.",
     "why": "One quiet choice to serve became a chorus of generosity—proof the internet can lift, not just scroll.",
@@ -440,7 +583,9 @@
     "source": "https://www.byronbaytrain.com.au",
     "ticker": "Australia Runs Solar Train"
   }
-];
+    ];
+    const STORIES = [...NEW_STORIES, ...OLD_STORIES];
+
 
     function storyCard(story){
       const a = document.createElement("article");
@@ -485,7 +630,7 @@
     (function init(){
       renderHighlight(STORIES[0]); // Tiny Homes as highlight
       renderStories(STORIES);
-      buildTicker(STORIES);
+      buildTicker(NEW_STORIES);
       document.querySelector("#updated span").textContent = new Date().toLocaleDateString();
     })();
   </script>
