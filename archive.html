@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RNN — Real News Network Archive</title>
+  <style>
+    :root{--bg:#000;--soft:#0f0f0f;--ink:#fff;--muted:#bbb;--ring:#FFD700}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--ring);text-decoration:none} a:hover{text-decoration:underline}
+
+    header{position:sticky;top:0;z-index:10;background:#000;border-bottom:2px solid var(--ring)}
+    .wrap{text-align:center;padding:16px}
+    h1{margin:0;color:var(--ring);font-size:26px}
+    .tag{color:var(--muted);font-size:14px;margin-top:4px}
+
+    .nav{display:flex;justify-content:center;gap:16px;margin-top:10px;font-size:14px}
+    .nav a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px;border:1px solid transparent;transition:border-color .15s ease,color .15s ease,background .15s ease}
+    .nav a.active{color:var(--ring);border-color:var(--ring);background:rgba(255,215,0,0.08)}
+    .nav a:hover{border-color:var(--ring)}
+
+    .why{color:var(--ring);font-style:italic;font-size:14px;margin:.3rem 0 0}
+    .meta{color:var(--muted);font-size:12px;margin-top:6px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:16px}
+    .card{background:#0b0b0b;border:1.5px solid var(--ring);border-radius:12px;padding:14px;transition:transform .15s ease, box-shadow .15s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.15)}
+    .card h3{margin:0 0 6px;color:var(--ring);font-size:18px}
+    .card p{margin:0 0 8px}
+
+    footer{text-align:center;color:#888;padding:18px 12px 28px;font-size:12px;border-top:1px solid #222;margin-top:12px}
+    footer .footer-links{margin-bottom:8px}
+    footer .footer-links a{margin:0 8px;font-size:13px}
+  </style>
+</head>
+<body id="top">
+  <header>
+    <div class="wrap">
+      <h1>RNN — Real News Network</h1>
+      <div class="tag">Archive • Only the Real. Only the Good.</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Latest Stories</a>
+        <a href="archive.html" class="active">Archive</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- No ticker, no highlight on Archive page -->
+  <main class="grid" id="grid" aria-live="polite"></main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">← Back to Latest</a>
+      <a href="#top">Back to Top</a>
+    </div>
+    <div id="updated">Archive generated: <span></span></div>
+  </footer>
+
+  <script>
+    const OLD_STORIES = [
+  {
+    "title": "Grad in a Cap and Gown Covers Burger King Shift (USA)",
+    "summary": "18-year-old Mykale Baker worked his understaffed Burger King on graduation night; a viral video sparked donations nearing $200k and a scholarship boost.",
+    "why": "One quiet choice to serve became a chorus of generosity—proof the internet can lift, not just scroll.",
+    "source": "https://www.washingtonpost.com/lifestyle/2025/06/06/graduation-burger-king-mykale-baker/",
+    "ticker": "BK Grad Turns Shift into Hope"
+  },
+  {
+    "title": "Renewables Overtake Coal Worldwide (Global)",
+    "summary": "Ember reports that in the first half of 2025, renewables generated more electricity globally than coal for the first time on record.",
+    "why": "The grid is learning a new rhythm—clean power keeping time with a growing world.",
+    "source": "https://ember-energy.org/latest-insights/global-electricity-mid-year-insights-2025/",
+    "ticker": "Clean Power Passes Coal"
+  },
+  {
+    "title": "World Cervical Cancer Elimination Day Becomes Official (Global)",
+    "summary": "WHO marks Nov 17, 2025 as the first World Cervical Cancer Elimination Day—galvanizing vaccination, screening, and treatment.",
+    "why": "When science meets will, a preventable cancer loses ground.",
+    "source": "https://www.who.int/campaigns/world-cervical-cancer-elimination-day/2025",
+    "ticker": "Nov 17: Eliminate Cervical Cancer"
+  },
+  {
+    "title": "Polio Cases Fall to Historic Lows (Global)",
+    "summary": "UNICEF reports 188 total polio cases Jan–Oct 5, 2025—down sharply from 562 in 2024 and 1,253 in 2020, inching toward eradication.",
+    "why": "Decades of door-to-door persistence are closing a chapter of human history.",
+    "source": "https://www.unicefusa.org/stories/world-polio-day-2025-defining-moment",
+    "ticker": "Polio Nears the Finish Line"
+  },
+  {
+    "title": "Zambia Rolls Out Malaria Vaccine Nationally (Zambia)",
+    "summary": "Zambia becomes the 24th country to introduce malaria vaccines, with over 500,000 children to be protected in the initial rollout.",
+    "why": "A shot in tiny arms, a shield for a continent—malaria loses its grip.",
+    "source": "https://www.afro.who.int/countries/zambia/news/zambia-launches-malaria-vaccine-protect-over-half-million-children",
+    "ticker": "Zambia’s Malaria Shield"
+  },
+  {
+    "title": "Teen’s Burger King Fund Surges Past $200k (USA)",
+    "summary": "Following viral attention, donations for Mykale Baker’s college dream exceeded $200,000; he plans to study automotive technology.",
+    "why": "Kindness compounds like interest when the story is honest.",
+    "source": "https://fortune.com/2025/06/06/mykale-baker-gofundme-burger-king-college-fund/",
+    "ticker": "College Fund for BK Hero"
+  },
+  {
+    "title": "Solar & Wind Growth Outpace Demand (Global)",
+    "summary": "AP coverage of Ember’s report: solar rose ~31% and wind ~7.7% in H1 2025, with renewables surpassing coal in generation.",
+    "why": "Proof the future isn’t distant—it’s plugging in now.",
+    "source": "https://apnews.com/article/abf7b587b038bf7580de1baee6576bbc",
+    "ticker": "Solar & Wind Surge"
+  },
+  {
+    "title": "Marine Fungi Trained to Eat Ocean Plastics (Hawai‘i)",
+    "summary": "Researchers at the University of Hawai‘i Mānoa identify and ‘condition’ marine fungi that can digest plastics faster in seawater.",
+    "why": "Nature holds repair instructions—we’re finally reading them.",
+    "source": "https://manoa.hawaii.edu/news/article.php?aId=13712",
+    "ticker": "Fungi vs. Plastic"
+  },
+  {
+    "title": "Community Fridges Flourish to Fight Hunger (North America)",
+    "summary": "Mutual-aid networks expand access to free, fresh food via neighborhood fridges stocked by volunteers and local partners.",
+    "why": "A plugged-in fridge can be a plugged-in community.",
+    "source": "https://www.positive.news/society/what-went-right-this-week/",
+    "ticker": "Neighborhood Fridges Feed Neighbors"
+  },
+  {
+    "title": "One-Horned Rhino Numbers Top 4,000 (India & Nepal)",
+    "summary": "Conservation efforts have lifted greater one-horned rhino populations above 4,000, reflecting years of protection and habitat work.",
+    "why": "Patience, protection, and parks can bring giants back.",
+    "source": "https://www.wwf.org.uk/updates/greater-one-horned-rhino-numbers",
+    "ticker": "Rhinos Rebound"
+  },
+  {
+    "title": "Youth-Led Lunch Debt Relief Goes National (USA)",
+    "summary": "Educators and students raise funds online to clear school lunch balances, keeping kids focused and fed.",
+    "why": "When dignity is the baseline, learning can flourish.",
+    "source": "https://www.nbcnews.com/news/us-news/school-lunch-debt-crowdfunding-rcna",
+    "ticker": "TikTok Clears Lunch Debt"
+  },
+  {
+    "title": "EVs Help Balance the Grid (Spain)",
+    "summary": "Vehicle-to-grid pilots expand as parked EVs feed electricity back during peaks, stabilizing local networks.",
+    "why": "Cars that rest can still do work for all of us.",
+    "source": "https://www.reuters.com/world/europe/spain-tests-vehicle-grid/",
+    "ticker": "EVs Join the Grid"
+  },
+  {
+    "title": "Seagrass Meadows Get New Protection (Mediterranean)",
+    "summary": "Countries expand protections for Posidonia seagrass, a powerful carbon sink and marine nursery.",
+    "why": "Underwater forests quietly store tomorrow’s breath.",
+    "source": "https://www.iucn.org/press-release",
+    "ticker": "Saving the Sea’s Lungs"
+  },
+  {
+    "title": "Cure Rates Improve with New Hemophilia Therapies (Global)",
+    "summary": "Regulators clear advanced treatments, expanding options for people with bleeding disorders in multiple regions.",
+    "why": "Precision medicine turns risk into routine life.",
+    "source": "https://www.fda.gov/news-events/press-announcements",
+    "ticker": "New Options for Hemophilia"
+  },
+  {
+    "title": "Cities Open ‘Libraries of Things’ (Europe)",
+    "summary": "Tool-lending libraries expand—neighbors borrow drills, sewing machines, and more instead of buying once.",
+    "why": "Sharing turns stuff into service.",
+    "source": "https://shareable.net/collection/libraries-of-things/",
+    "ticker": "Borrow, Don’t Buy"
+  },
+  {
+    "title": "Indigenous Fire Practices Reduce Megafires (Australia)",
+    "summary": "Cultural burning programs protect Country, restore ecosystems, and lower wildfire risk.",
+    "why": "Ancient wisdom still knows the land’s language.",
+    "source": "https://theconversation.com/indigenous-cultural-burning",
+    "ticker": "Good Fire Prevents Bad Fire"
+  },
+  {
+    "title": "Floating Solar Expands on Lakes (Netherlands)",
+    "summary": "Engineers deploy floating solar farms, adding capacity without using farmland.",
+    "why": "Sunlight, softly borrowed from the water’s face.",
+    "source": "https://www.floating-solar.nl",
+    "ticker": "Solar That Floats"
+  },
+  {
+    "title": "Bison Rewilding Brings Back Woodland Health (UK)",
+    "summary": "Reintroduced bison reshape habitats through natural grazing, boosting biodiversity in Kent woodlands.",
+    "why": "Letting wildness be itself can heal a forest.",
+    "source": "https://www.kentwildlifetrust.org.uk/news/bison-are-back",
+    "ticker": "Bison as Forest Gardeners"
+  },
+  {
+    "title": "Solar Cold Rooms Cut Food Waste (Nigeria)",
+    "summary": "Solar-powered refrigerated storage helps farmers preserve produce and earn more.",
+    "why": "A cold room today means a full market tomorrow.",
+    "source": "https://coldhubs.com/",
+    "ticker": "Sun-Chilled Harvests"
+  },
+  {
+    "title": "Mangrove Comebacks Shield Coasts (Bangladesh)",
+    "summary": "Community planting restores mangroves—living sea walls that buffer storms and nurture fisheries.",
+    "why": "Roots in brackish water, roots in community.",
+    "source": "https://www.icraf.org/article/mangroves-restore-coasts",
+    "ticker": "Mangroves, Storm Guardians"
+  },
+  {
+    "title": "High-Seas Treaty Crosses Ratification Threshold (UN)",
+    "summary": "Nations move the biodiversity treaty toward force, enabling protection across half the planet’s surface: the high seas.",
+    "why": "A passport for life beyond borders.",
+    "source": "https://www.un.org/bbnj/",
+    "ticker": "High Seas: Protection Ahead"
+  },
+  {
+    "title": "Community Solar Co-ops Lower Bills (Brazil)",
+    "summary": "Favela-based energy co-ops expand rooftop solar and job training for youth.",
+    "why": "Ownership turns light into livelihood.",
+    "source": "https://www.revolusolar.org.br/",
+    "ticker": "Rio Rooftops, Shared Power"
+  },
+  {
+    "title": "Plastic-Eating Enzymes Break Through (France)",
+    "summary": "Scientists engineer enzymes that rapidly degrade PET, edging closer to true circular recycling.",
+    "why": "Waste becomes raw material when we learn the right keys.",
+    "source": "https://www.nature.com",
+    "ticker": "Enzymes Unlock Plastic"
+  },
+  {
+    "title": "‘Libraries of Things’ Arrive in Germany (Germany)",
+    "summary": "New borrowing hubs let residents check out appliances and tools—extending product life and cutting costs.",
+    "why": "A drill used by ten hands is ten times wiser.",
+    "source": "https://www.leihladen.net/",
+    "ticker": "Sharing Shops Spread"
+  },
+  {
+    "title": "Ocean Cleanup Reports Record Hauls (Pacific)",
+    "summary": "Cleanup systems remove increasing amounts of plastic from gyres as designs improve and scale.",
+    "why": "Even slow nets can weave a cleaner future.",
+    "source": "https://theoceancleanup.com/",
+    "ticker": "Bigger Catches, Cleaner Seas"
+  },
+  {
+    "title": "Tiny-Home Villages Scale Up (USA)",
+    "summary": "Cities and nonprofits expand tiny-home communities with wraparound services.",
+    "why": "Dignity + support helps people exit chronic homelessness.",
+    "source": "https://operationtinyhome.org/",
+    "ticker": "U.S. Tiny-Home Villages Scale Up"
+  },
+  {
+    "title": "Free Nutritious Meals (Indonesia)",
+    "summary": "Nationwide program combats child malnutrition via school/community meals.",
+    "why": "Better learning, health and long-term earnings for a generation.",
+    "source": "https://apnews.com",
+    "ticker": "Indonesia Launches Free Nutritious Meals"
+  },
+  {
+    "title": "Protected Seascape (Philippines)",
+    "summary": "Panaon Island Protected Seascape safeguards vital Coral Triangle reefs.",
+    "why": "Community MPAs rebuild fish stocks and protect coasts.",
+    "source": "https://news.mongabay.com",
+    "ticker": "Philippines Protects Coral Hotspot"
+  },
+  {
+    "title": "Green Prescribing Expands (UK)",
+    "summary": "NHS pilots scale referrals to nature walks and gardening for wellbeing.",
+    "why": "Nature reduces anxiety and builds community ties.",
+    "source": "https://www.england.nhs.uk/personalisedcare/social-prescribing/",
+    "ticker": "UK Expands Green Prescribing"
+  },
+  {
+    "title": "High-Seas Treaty Threshold Met",
+    "summary": "Countries cross ratification threshold for UN high-seas biodiversity treaty.",
+    "why": "Enables protection of nearly half the planet's surface (the high seas).",
+    "source": "https://www.un.org/bbnj/",
+    "ticker": "UN High-Seas Treaty Advances"
+  },
+  {
+    "title": "Community Solar in Favelas (Brazil)",
+    "summary": "Local co-ops expand rooftop solar, lowering bills and training youth.",
+    "why": "Community-owned energy reduces poverty and emissions.",
+    "source": "https://www.revolusolar.org.br/",
+    "ticker": "Rio Favelas Grow Community Solar"
+  },
+  {
+    "title": "Community Forest Guards Double Tree Cover (Kenya)",
+    "summary": "Local patrols restore degraded forests, bringing back wildlife and water.",
+    "why": "Healthy forests = healthy communities and resilient ecosystems.",
+    "source": "https://www.greenbeltmovement.org",
+    "ticker": "Kenya Forest Guards Double Tree Cover"
+  },
+  {
+    "title": "World’s Largest Direct-Air Capture Plant Opens (Iceland)",
+    "summary": "Plant begins removing CO2 directly from the air and storing underground.",
+    "why": "A big leap in carbon removal technology.",
+    "source": "https://climeworks.com",
+    "ticker": "Iceland Direct-Air Capture Opens"
+  },
+  {
+    "title": "Village Microgrids Deliver 24/7 Power (India)",
+    "summary": "Solar + batteries power rural villages, replacing diesel generators.",
+    "why": "Clean energy brings light, jobs, and opportunity.",
+    "source": "https://selco-india.com",
+    "ticker": "India Villages Gain 24/7 Solar Power"
+  },
+  {
+    "title": "Food Waste Apps Expand (Canada)",
+    "summary": "Apps connect consumers with surplus meals, cutting landfill waste.",
+    "why": "Less food waste means lower emissions and fuller bellies.",
+    "source": "https://toogoodtogo.com",
+    "ticker": "Canada Apps Slash Food Waste"
+  },
+  {
+    "title": "Elder Care Robotics Assist Seniors (Japan)",
+    "summary": "Robots provide support for mobility and companionship in aging society.",
+    "why": "Tech helps seniors live independently with dignity.",
+    "source": "https://asia.nikkei.com",
+    "ticker": "Japan Uses Robots for Elder Care"
+  },
+  {
+    "title": "Polio Cases Reach Record Low (Global)",
+    "summary": "Global eradication effort reports lowest ever polio cases worldwide.",
+    "why": "A disease once feared is close to eradication.",
+    "source": "https://polioeradication.org",
+    "ticker": "Global Polio Cases At Record Low"
+  },
+  {
+    "title": "Solar Desalination Brings Clean Water (Morocco)",
+    "summary": "Innovative solar plants provide safe drinking water in arid regions.",
+    "why": "Tackling water scarcity with renewable energy.",
+    "source": "https://www.iwmi.cgiar.org",
+    "ticker": "Morocco Solar Desalination Expands"
+  },
+  {
+    "title": "Urban Farms Feed Cities (USA)",
+    "summary": "Vertical farms produce fresh greens year-round in urban centers.",
+    "why": "Local food with smaller footprints.",
+    "source": "https://www.plenty.ag",
+    "ticker": "Urban Farming Expands in USA"
+  },
+  {
+    "title": "Wildlife Corridor Restores Migration (Tanzania)",
+    "summary": "Communities and NGOs restore elephant migration paths.",
+    "why": "Corridors reduce conflict and boost biodiversity.",
+    "source": "https://wwf.panda.org",
+    "ticker": "Tanzania Opens Elephant Corridor"
+  },
+  {
+    "title": "Youth Climate Courts (Chile)",
+    "summary": "Youth councils influence climate policy through local climate courts.",
+    "why": "Youth voices guide environmental justice.",
+    "source": "https://climatejustice.org",
+    "ticker": "Chile Youth Climate Courts Active"
+  },
+  {
+    "title": "Floating Solar Islands (Netherlands)",
+    "summary": "Floating solar farms expand renewable generation without using land.",
+    "why": "Efficient, innovative solar expansion.",
+    "source": "https://www.floating-solar.nl",
+    "ticker": "Netherlands Floating Solar Expands"
+  },
+  {
+    "title": "Wild Bison Return (UK)",
+    "summary": "Bison released in Kent woodland as rewilding experiment.",
+    "why": "Rewilding restores ecosystems and biodiversity.",
+    "source": "https://rewildingeurope.com",
+    "ticker": "UK Bison Released in Kent"
+  },
+  {
+    "title": "Plastic-Eating Enzymes Breakthrough (France)",
+    "summary": "Scientists engineer enzymes that rapidly degrade PET plastic.",
+    "why": "Science turns waste into new resources.",
+    "source": "https://www.nature.com",
+    "ticker": "France Breakthrough in Plastic Enzymes"
+  },
+  {
+    "title": "Solar-Powered Cold Storage (Nigeria)",
+    "summary": "Farmers use solar cold rooms to preserve harvests and cut waste.",
+    "why": "Boosts farmer incomes and food security.",
+    "source": "https://coldhubs.com",
+    "ticker": "Nigeria Solar Cold Storage Expands"
+  },
+  {
+    "title": "Mangrove Restoration Success (Bangladesh)",
+    "summary": "Community planting restores mangroves, protecting coasts from storms.",
+    "why": "Mangroves = nature’s sea walls.",
+    "source": "https://www.icraf.org",
+    "ticker": "Bangladesh Restores Mangroves"
+  },
+  {
+    "title": "Libraries of Things (Germany)",
+    "summary": "Communities open libraries where people borrow tools & appliances.",
+    "why": "Sharing economy reduces waste and costs.",
+    "source": "https://shareable.net",
+    "ticker": "Germany Expands Libraries of Things"
+  },
+  {
+    "title": "Indigenous Fire Management (Australia)",
+    "summary": "Traditional burning practices reduce mega-fires and restore ecology.",
+    "why": "Ancient knowledge meets modern resilience.",
+    "source": "https://theconversation.com",
+    "ticker": "Australia Revives Indigenous Fire Mgmt"
+  },
+  {
+    "title": "Solar Schools Network (South Africa)",
+    "summary": "Thousands of schools go solar, cutting costs and teaching sustainability.",
+    "why": "Children learn while lights stay on.",
+    "source": "https://green-schools.co.za",
+    "ticker": "South Africa Solar Schools Grow"
+  },
+  {
+    "title": "Bee-Friendly Highways (Sweden)",
+    "summary": "Roadsides turned into pollinator habitats support biodiversity.",
+    "why": "Infrastructure doubles as ecosystem support.",
+    "source": "https://www.theguardian.com",
+    "ticker": "Sweden Creates Bee-Friendly Highways"
+  },
+  {
+    "title": "100% Renewable Island (Denmark)",
+    "summary": "Samsø Island runs fully on renewable energy.",
+    "why": "Proof communities can be carbon neutral.",
+    "source": "https://stateofgreen.com",
+    "ticker": "Denmark Island Goes 100% Renewable"
+  },
+  {
+    "title": "Ocean Cleanup Expands (Pacific)",
+    "summary": "Cleanup system removes record amount of plastic from Great Pacific Patch.",
+    "why": "Cleaner oceans for all life.",
+    "source": "https://theoceancleanup.com",
+    "ticker": "Pacific Ocean Cleanup Scales Up"
+  },
+  {
+    "title": "Tree-Planting Drones (UAE)",
+    "summary": "Drones plant millions of trees in desert landscapes.",
+    "why": "High-tech reforestation at scale.",
+    "source": "https://www.ecosia.org",
+    "ticker": "UAE Drones Plant Trees"
+  },
+  {
+    "title": "River Dolphins Return (China)",
+    "summary": "Yangtze River dolphin sightings increase after pollution controls.",
+    "why": "Healthy rivers bring wildlife back.",
+    "source": "https://www.scmp.com",
+    "ticker": "China Dolphins Return to Yangtze"
+  },
+  {
+    "title": "Solar Train Line (Australia)",
+    "summary": "Train line powers operations with solar energy.",
+    "why": "Transport runs clean and efficient.",
+    "source": "https://www.byronbaytrain.com.au",
+    "ticker": "Australia Runs Solar Train"
+  }
+    ];
+
+    function storyCard(story){
+      const a = document.createElement("article");
+      a.className = "card";
+      a.innerHTML = `
+        <h3>${story.title}</h3>
+        <p>${story.summary}</p>
+        <p class="why">Why it matters: ${story.why}</p>
+        <p class="meta">Source: <a href="${story.source}" target="_blank" rel="noopener">Open</a></p>
+      `;
+      return a;
+    }
+
+    function renderStories(list){
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      list.forEach(s => grid.appendChild(storyCard(s)));
+    }
+
+    (function init(){
+      renderStories(OLD_STORIES);
+      document.querySelector("#updated span").textContent = new Date().toLocaleDateString();
+    })();
+  </script>
+</body>
+</html>
